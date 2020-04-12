@@ -1,2 +1,4 @@
 # dotfiles
-some dotfiles bro
+> Some files brooo
+
+[lukasjoc](https://lukasjoc.com/about), 2020

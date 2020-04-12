@@ -1,0 +1,61 @@
+#!/bin/sh
+
+if ! command -v "brew" >/dev/null 2>&1;  then
+  echo "Brew not installed..."
+  echo "Run /usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)' to install it..."
+  echo "Happy brewing. :)"
+fi
+
+# Langs
+echo "Installing Langs..."
+brew install python # just latest python
+brew install node # just latest LTS nodejs
+brew install go # just latest golang
+brew install rust
+brew install nim
+
+# Development Tools
+echo "Installing Development Tools..."
+brew install git # better git
+brew install ack # better grep
+brew install bash # better bash
+brew install tmux # structured development
+brew install tree # keep the overview
+brew install watch # watch dirs
+brew install curl
+brew install wget
+brew install nmap
+brew install macvim # for writing code,notes...
+
+# Other helpful stuff
+echo "Installing other helpful stuff..."
+brew install exercism # exercise is king
+brew install figlet # funny ascii printer
+brew install fortune # funny quotes
+brew install htop # processies screen of the gods
+brew install iproute2mac # ip addr for mac
+
+# Install Casks
+echo "Installing caskrooms..."
+brew cask install alacritty # the best terminal
+brew cask install alfred # easy lookup
+brew cask install authy # 2fa codes
+brew cask install cleanmymac # clean up system
+brew cask install docker # docker desktop VM
+brew cask install qbittorrent # open source bittorrent app
+# brew cask install slack # communication is king
+brew cask install spectacle # window management
+brew cask install spotify # music for coding
+brew cask fetch eloston-chromium
+brew cask install eloston-chromium # good chrome
+brew cask install virtualbox # virtualization
+brew cask install firefox-deleveloper-edition # netflix and stuff
+# brew cask install vlc # play tracks and any media
+# brew cask install xquartz # you gotta have that
+# brew cask install vagrant
+# brew cask install mactex
+
+# Run brew doctor after installation
+brew doctor
+
+echo "DONE"

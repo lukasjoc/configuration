@@ -1,0 +1,12 @@
+#!/bin/sh
+
+find_sstr() {
+  if ! echo "$PATH" | grep -q "$GOPATH"; then
+    echo "could not match"
+    return 1
+  fi
+  echo "could match"
+  return
+}
+
+find_sstr
