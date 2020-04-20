@@ -43,17 +43,11 @@ brew cask install authy # 2fa codes
 brew cask install cleanmymac # clean up system
 brew cask install docker # docker desktop VM
 brew cask install qbittorrent # open source bittorrent app
-# brew cask install slack # communication is king
 brew cask install spectacle # window management
 brew cask install spotify # music for coding
-brew cask fetch eloston-chromium
-brew cask install eloston-chromium # good chrome
+brew cask install brave-browser # best browser out there
 brew cask install virtualbox # virtualization
-brew cask install firefox-deleveloper-edition # netflix and stuff
-# brew cask install vlc # play tracks and any media
-# brew cask install xquartz # you gotta have that
-# brew cask install vagrant
-# brew cask install mactex
+brew cask install xquartz # you gotta have that
 
 # Run brew doctor after installation
 brew doctor
