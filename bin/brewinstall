@@ -34,6 +34,9 @@ brew install figlet # funny ascii printer
 brew install fortune # funny quotes
 brew install htop # processies screen of the gods
 brew install iproute2mac # ip addr for mac
+brew install colordiff # colors in diff
+brew tap cjbassi/gotop
+brew istall gotop niiice top
 
 # Install Casks
 echo "Installing caskrooms..."
