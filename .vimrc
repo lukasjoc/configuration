@@ -1,18 +1,23 @@
 " base config
 filetype plugin indent on
 syntax on
+
 set nocompatible
 set list
 set number
 set hlsearch
 set ruler
 set listchars=tab:\ \ ,trail:.
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set noexpandtab
 set encoding=utf-8
 set backspace=indent,eol,start
 set paste
 set background=dark
-" ==============================
+set belloff=all
+
+colorscheme koehler
 
 " plugins
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,8 +26,7 @@ call vundle#begin()
 	Plugin 'wakatime/vim-wakatime'
 	Plugin 'fatih/vim-go'
 	Plugin 'cespare/vim-toml'
-	Plugin 'posva/vim-vue'
-" 	Plugin 'zah/nim.vim'
+	Plugin 'chiel92/vim-autoformat'
 call vundle#end()
 " ==============================
 
@@ -35,18 +39,18 @@ if has("autocmd")
 		autocmd BufNewFile *.md  0r ~/.vim/skels/skel.md
 	augroup END
 	augroup commenting
-		autocmd FileType c,cpp,javascript,java,scala,go let b:comment_leader = "// "
-		autocmd FileType vim                 let b:comment_leader = '" '
-		autocmd FileType sh,yml,yaml,bash,python      let b:comment_leader = "# "
-		autocmd FileType tex                 let b:comment_leader = "% "
-		autocmd FileType sql                 let b:comment_leader = "-- "
+		autocmd FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
+		autocmd FileType vim	let b:comment_leader = '" '
+		autocmd FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
+		autocmd FileType tex	let b:comment_leader = "% "
+		autocmd FileType sql	let b:comment_leader = "-- "
 		autocmd FileType tex set makeprg=pdflatex\ %
 		autocmd FileType js set makeprg=node\ %
 		autocmd FileType python set makeprg=python3\ %
 	augroup END
+
 " keymaps
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 endif
 " ==============================
-
