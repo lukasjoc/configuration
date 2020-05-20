@@ -30,6 +30,6 @@ export envm_wdir="$HOME/fun"
 export envm_auto_update_days=7 # every 5 days envm is going to automatically update
 source $envm/envm.sh
 
-export mssql_shared="$HOME/team/funjsmd/mssql-docker/shared"
+export mssql_shared="$HOME/fun/mssql-docker/shared"
 alias sap="docker container start PlatinGUI750_PL1"
 
