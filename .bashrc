@@ -7,7 +7,7 @@ HISTFILESIZE=2000
 
 # random stuff I need globally or in my PATH
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
 
 export effective_notes_init="$HOME/Sync/w/notes"
 export EDITOR="vim"
@@ -23,6 +23,9 @@ export GO111MODULE=on
 
 # LaTeX
 export TEXMFHOME="$HOME/Library/texmf"
+
+# Python3
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # EnvM stuff
 export envm="$HOME/.envm"
