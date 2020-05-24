@@ -1,36 +1,48 @@
-" base config
-filetype plugin indent on
-syntax on
-
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+Bundle "VundleVim/Vundle.vim"
+Bundle "wakatime/vim-wakatime"
+Bundle "fatih/vim-go"
+Bundle "cespare/vim-toml"
+Bundle "gmarik/vundle"
+Bundle "scrooloose/syntastic"
+Bundle "zah/nim.vim"
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+
+filetype plugin indent on
+set listchars=tab:\ \ ,trail:.
+set tabstop=2 shiftwidth=2 noexpandtab
+set backspace=indent,eol,start
+
+set hidden
 set list
 set number
 set hlsearch
 set ruler
-set listchars=tab:\ \ ,trail:.
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
-set encoding=utf-8
-set backspace=indent,eol,start
 set paste
+
+set encoding=utf-8
 set background=dark
 set belloff=all
 
+" lets test this
+set mouse=a
+
 colorscheme koehler
+syntax on
 
-" plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'wakatime/vim-wakatime'
-	Plugin 'fatih/vim-go'
-	Plugin 'cespare/vim-toml'
-	Plugin 'chiel92/vim-autoformat'
-call vundle#end()
-" ==============================
-
-" automation, workflow
 if has("autocmd")
   augroup  skels
 		autocmd BufNewFile *.*sh 0r ~/.vim/skels/skel.sh
@@ -40,7 +52,7 @@ if has("autocmd")
 	augroup END
 	augroup commenting
 		autocmd FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
-		autocmd FileType vim	let b:comment_leader = '" '
+		autocmd FileType vim	let b:comment_leader = "" "
 		autocmd FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
 		autocmd FileType tex	let b:comment_leader = "% "
 		autocmd FileType sql	let b:comment_leader = "-- "
@@ -49,8 +61,11 @@ if has("autocmd")
 		autocmd FileType python set makeprg=python3\ %
 	augroup END
 
-" keymaps
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
 endif
+
+
 " ==============================
+
+

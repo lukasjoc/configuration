@@ -8,49 +8,53 @@ fi
 
 # Langs
 echo "Installing Langs..."
-brew install python # just latest python
-brew install node # just latest LTS nodejs
-brew install go # just latest golang
-brew install rust
-brew install nim
+brew install python # :ok
+brew install r      # :r
+brew install go   	# :)
+brew install rust 	# :))
+brew install nim  	# :)))
+brew install node 	# :(
 
 # Development Tools
 echo "Installing Development Tools..."
-brew install git # better git
-brew install ack # better grep
-brew install bash # better bash
-brew install tmux # structured development
-brew install tree # keep the overview
-brew install watch # watch dirs
+brew install git
+brew install ack
+brew install bash
+brew install tmux
+brew install tree
+brew install watch
 brew install curl
 brew install wget
 brew install nmap
-brew install macvim # for writing code,notes...
+brew install macvim
+#===
 
 # Other helpful stuff
 echo "Installing other helpful stuff..."
-brew install exercism # exercise is king
-brew install figlet # funny ascii printer
-brew install fortune # funny quotes
-brew install htop # processies screen of the gods
-brew install iproute2mac # ip addr for mac
-brew install colordiff # colors in diff
+brew install exercism # 👑
+brew install figlet
+brew install fortune
+brew install htop
+brew install iproute2mac
+brew install colordiff
+#===
 
 # Install Casks
 echo "Installing caskrooms..."
-brew cask install alacritty # the best terminal
-brew cask install alfred # easy lookup
-brew cask install authy # 2fa codes
-brew cask install cleanmymac # clean up system
-brew cask install docker # docker desktop VM
-brew cask install qbittorrent # open source bittorrent app
-brew cask install spectacle # window management
-brew cask install spotify # music for coding
-brew cask install brave-browser # best browser out there
-brew cask install virtualbox # virtualization
-brew cask install xquartz # you gotta have that
+brew cask install alfred
+brew cask install authy
+brew cask install cleanmymac
+brew cask install docker
+brew cask install qbittorrent
+brew cask install spectacle
+brew cask install brave-browser
+brew cask install virtualbox
+brew cask install xquartz
+brew cask install macvim
+brew cask install textmate
+#===
 
-# Run brew doctor after installation
+
 brew doctor
 
 echo "DONE"
