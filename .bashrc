@@ -1,36 +1,40 @@
-# ~/.bashrc: executed for non-login shells.
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+
+shopt -s histappend
+shopt -s checkwinsize
 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-
-export EDITOR="mvim"
-export CLICOLOR=1
-
 # random stuff I need globally or in my PATH
 export PATH="/usr/local/bin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
+
+export effective_notes_init="$HOME/Sync/w/notes"
+export EDITOR="vim"
 
 # Rust
 export RUST_SRC_PATH="$HOME/.cargo"
-export RUSTBIN="$HOME/.cargo/bin"
-export PATH=$RUST_SRC_PATH/bin:$PATH
+export PATH=$PATH:.cargo/bin
 
 # Go
 export GOPATH="$HOME/.go/"
-export GOBIN="$GOPATH/bin"
+export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
-export PATH=$GOPATH/bin:$PATH
 
 # LaTeX
 export TEXMFHOME="$HOME/Library/texmf"
 
-# Python 3.7
+# Python3
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # EnvM stuff
 export envm="$HOME/.envm"
 export envm_wdir="$HOME/fun"
-export envm_auto_update_days=5
+export envm_auto_update_days=7 # every 5 days envm is going to automatically update
 source $envm/envm.sh
 
 export mssql_shared="$HOME/fun/mssql-docker/shared"
