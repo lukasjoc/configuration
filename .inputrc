@@ -1,0 +1,31 @@
+# Basics
+set -g base-index 1
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+set-option -g default-command bash
+set -g status-keys vi
+setw -g mode-keys vi
+set -g status-keys vi
+set -g history-limit 10000
+setw -g monitor-activity on
+set -sg escape-time 0
+
+# INFO: this needs be there, because I want the same colors in vim in tmux and normal mode
+set -g default-terminal "screen-256color"
+#-------
+
+set -g status-bg colour234
+set -g status-fg cyan
+set -g window-status-current-style bg=colour234,fg=white
+set -g status-interval 100
+set -g status-left-length 30
+set -g status-right-length 60
+set -g status-left '#[fg=white](#S) '
+set -g status-right '#[fg=white] Pane: #P | #(whoami)@#H | #[fg=white]%a %d.%m.%Y '
+
+# Remap some keys
+set -g prefix C-a
+unbind-key C-b
+bind-key C-a send-prefix
+bind-key -T prefix a new-window
+
