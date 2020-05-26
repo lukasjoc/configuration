@@ -10,9 +10,9 @@ fi
 echo "Installing Langs..."
 brew install python # :ok
 brew install r      # :r
-brew install go   	# :)
-brew install rust 	# :))
-brew install nim  	# :)))
+brew install nim   	# :)
+brew install go 	  # :))
+brew install rust  	# :)))
 brew install node 	# :(
 
 # Development Tools
