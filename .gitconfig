@@ -3,7 +3,7 @@
   name = lukasjoc
 [core]
   autocrlf = false
-  excludesfile = /Users/jochamlu/.gitignore
+  excludesfile = $HOME/.gitignore
   quotepath = false
 [help]
   autocorrect = 9
