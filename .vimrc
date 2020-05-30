@@ -30,11 +30,13 @@ syntax on
 
 if has("autocmd")
 
-	augroup  skels
+	augroup skels
 		autocmd BufNewFile *.*sh 0r ~/.vim/skels/skel.sh
 		autocmd BufNewFile *.py  0r ~/.vim/skels/skel.py
 		autocmd BufNewFile *.js  0r ~/.vim/skels/skel.js
 		autocmd BufNewFile *.md  0r ~/.vim/skels/skel.md
+		autocmd BufNewFile *.c  0r ~/.vim/skels/skel.c
+		autocmd BufNewFile *.cpp  0r ~/.vim/skels/skel.cpp	
 	augroup END
 	
 	augroup commenting
