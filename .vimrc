@@ -1,24 +1,6 @@
 
+" Pathogen Plugin Manager because vim-plug requires single quotes ;(
 call pathogen#infect()
-
-" Packages $HOME/.vim/bundle
-" tree -L 1 
-" .
-" |-- nim.vim
-" |-- syntastic
-" |-- toml
-" |-- vim-go
-" `-- vim-wakatime
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
@@ -47,7 +29,8 @@ colorscheme unicon
 syntax on
 
 if has("autocmd")
-  augroup  skels
+
+	augroup  skels
 		autocmd BufNewFile *.*sh 0r ~/.vim/skels/skel.sh
 		autocmd BufNewFile *.py  0r ~/.vim/skels/skel.py
 		autocmd BufNewFile *.js  0r ~/.vim/skels/skel.js
@@ -60,12 +43,18 @@ if has("autocmd")
 		autocmd FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
 		autocmd FileType tex	let b:comment_leader = "% "
 		autocmd FileType sql	let b:comment_leader = "-- "
+	augroup END
+
+	augroup makes
 		autocmd FileType tex set makeprg=pdflatex\ %
 		autocmd FileType js set makeprg=node\ %
 		autocmd FileType python set makeprg=python3\ %
+		autocmd FileType cpp set makeprg=g++\ %
+		autocmd FileType c set makeprg=gcc\  %	
 	augroup END
 
 	noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
+
 endif
 

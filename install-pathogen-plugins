@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# installing pathogen bundles into rtp
+
+##Pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+##
+
+##Plugins
+git clone git://github.com/zah/nim.vim.git ~/.vim/bundle/vim-nim
+git clone git://github.com/wakatime/vim-wakatime.git ~/.vim/bundle/vim-wakatime
+git clone https://github.com/cespare/vim-toml.git ~/.vim/bundle/vim-toml
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+##

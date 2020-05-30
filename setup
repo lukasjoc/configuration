@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# bash setup
+cp -a .bashrc .bash_profile .profile ~
+
+# vim setup
+cp -a .vim .vimrc .gvimrc ~
+
+# tmux and inputrc
+cp -a .tmux.conf .inputrc ~
+
+# git setup
+cp -a .gitconfig .gitignore ~
