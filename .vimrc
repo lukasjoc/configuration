@@ -1,3 +1,10 @@
+" Author: Lukas Jocham [https://lukasjoc.com]
+" URL:	https://github.com/lukasjoc/dotfiles/tree/master/.vimrc
+" License: MIT
+" Last Change: 30.05.20
+" Version: 1.0
+" Descrition: Vim, MacVim configuration with pathogen as plugin manager, template files
+" and commenting
 
 " Pathogen Plugin Manager because vim-plug requires single quotes ;(
 call pathogen#infect()
@@ -26,33 +33,34 @@ set updatetime=300
 set mouse=a
 
 colorscheme unicon
-syntax on
+syntax enable
 
 if has("autocmd")
-
+	
 	augroup skels
-		autocmd BufNewFile *.*sh 0r ~/.vim/skels/skel.sh
-		autocmd BufNewFile *.py  0r ~/.vim/skels/skel.py
-		autocmd BufNewFile *.js  0r ~/.vim/skels/skel.js
-		autocmd BufNewFile *.md  0r ~/.vim/skels/skel.md
-		autocmd BufNewFile *.c  0r ~/.vim/skels/skel.c
-		autocmd BufNewFile *.cpp  0r ~/.vim/skels/skel.cpp	
+		autocmd BufNewFile *.*sh 	0r $HOME/.vim/skels/skel.sh
+		autocmd BufNewFile *.py  	0r $HOME/.vim/skels/skel.py
+		autocmd BufNewFile *.js  	0r $HOME/.vim/skels/skel.js
+		autocmd BufNewFile *.md  	0r $HOME/.vim/skels/skel.md
+		autocmd BufNewFile *.c  	0r $HOME/.vim/skels/skel.c
+		autocmd BufNewFile *.cpp  0r $HOME/.vim/skels/skel.cpp
+		autocmd BufNewFile *.html 0r $HOME/.vim/skels/skel.html
 	augroup END
 	
 	augroup commenting
 		autocmd FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
-		autocmd FileType vim let b:comment_leader = '" '
-		autocmd FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
-		autocmd FileType tex	let b:comment_leader = "% "
-		autocmd FileType sql	let b:comment_leader = "-- "
+		autocmd FileType sh,yml,yaml,bash,python,nim				 let b:comment_leader = "# "
+		autocmd FileType vim 																 let b:comment_leader = '" '
+		autocmd FileType tex																 let b:comment_leader = "% "
+		autocmd FileType sql																 let b:comment_leader = "-- "
 	augroup END
 
 	augroup makes
-		autocmd FileType tex set makeprg=pdflatex\ %
-		autocmd FileType js set makeprg=node\ %
+		autocmd FileType tex    set makeprg=pdflatex\ %
+		autocmd FileType js     set makeprg=node\ %
 		autocmd FileType python set makeprg=python3\ %
-		autocmd FileType cpp set makeprg=g++\ %
-		autocmd FileType c set makeprg=gcc\  %	
+		autocmd FileType cpp    set makeprg=g++\ %
+		autocmd FileType c      set makeprg=gcc\  %	
 	augroup END
 
 	noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>

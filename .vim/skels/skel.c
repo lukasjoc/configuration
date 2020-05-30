@@ -1,6 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main() {
-	printf("Hello C World!\n");
+int main( int argc, char *argv[] ) {
+	printf("Hello C World!");	
 	return 0;
 }
+
