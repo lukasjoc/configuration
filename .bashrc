@@ -6,7 +6,7 @@ shopt -s checkwinsize
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-export EDITOR="mvim"
+export EDITOR="mvim -v"
 export CLICOLOR=1
 
 export PATH="/usr/local/bin:$PATH"
