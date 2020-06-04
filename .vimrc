@@ -1,6 +1,6 @@
 " Author: Lukas Jocham [https://lukasjoc.com]
 " URL:	https://github.com/lukasjoc/dotfiles/tree/master/.vimrc
-" License: MIT
+" License: GPL-3
 " Last Change: 30.05.20
 " Version: 1.0
 " Descrition: Vim, MacVim configuration with pathogen as plugin manager, template files
