@@ -1,4 +1,6 @@
 # ~/.bashrc: executed for non-login shells.
+# init defaults
+source /etc/bashrc
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -6,6 +8,8 @@ shopt -s checkwinsize
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+# On Linux systems the XDG paths are automatically set but on most darwin based and BSD based systems
+# i found that these are not set anywhere.. /etc/bashrc or more
 export XDG_CONFIG_HOME=$HOME/.config # configs
 export XDG_CACHE_HOME=$HOME/.cache # user cache/meta data
 export XDG_DATA_HOME=$HOME/.local/share # relevant user data
