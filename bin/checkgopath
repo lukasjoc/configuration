@@ -1,0 +1,18 @@
+#!/bin/bash
+# Checks if gopath is in $PATH normally GOBIN is enough because it is sub of GOPATH containing all binaries
+# Author
+set -u
+
+
+
+readonly gopath_local="$(go env GOPATH)"
+readonly gobin_local="$(go env GOBIN)"
+
+if ! echo "$PATH" | grep -q "$gopath_local"; then
+  echo "could not find gopath in path"
+  exit 1
+fi
+
+echo "could match $gopath_local"
+
+exit 0
