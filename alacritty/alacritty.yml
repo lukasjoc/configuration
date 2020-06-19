@@ -1,17 +1,18 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
+# Configuration for Alacritty, the GPU enhanced terminal emulator. 
 # Optimized for tmux/vim/macos workflow.
 
 window:
   dimensions:
-    columns: 113
-    lines: 84
+    columns: 115
+    lines: 63
   padding:
     x: 2
     y: 2
   dynamic_padding: false
+  # title: NoNoob
 
 scrolling:
-  history: 100000
+  history: 10000
 
 font:
   normal:
@@ -26,48 +27,56 @@ font:
   bold_italic:
     family: Monaco
     style: Bold Italic
-  size: 13.5
+  size: 12.5
 
 visual_bell:
   animation: EaseOutExpo
   duration: 0
-  color: "#FFFFFF"
+  color: '#FFFFFF'
 
+# Thayer Bright
 colors:
+  # Default colors
   primary:
-    background: "0x0D0D0D"
-    foreground: "0xF8F8F8"
+    background: '0x0D0D0D'
+    foreground: '0xF8F8F8'
+
+  # Cursor colors
   cursor:
-    text:   "0x000000"
-    cursor: "0xFC971E"
+    text:   '0x000000'
+    cursor: '0xFC971E'
+
+  # terminal colors
   normal:
-    black:   "0x1B1D1E"
-    red:     "0xB3B41A"
-    green:   "0x23CED4"
-    yellow:  "0xAEA812"
-    blue:    "0xD712E3"
-    magenta: "0x8C54FE"
-    cyan:    "0x23CED4"
-    white:   "0xCCCCC6"
+    black:   '0x1B1D1E'
+    red:     '0xB3B41A'
+    green:   '0x23CED4'
+    yellow:  '0xAEA812'
+    blue:    '0xD712E3'
+    magenta: '0x8C54FE'
+    cyan:    '0x23CED4'
+    white:   '0xCCCCC6'
+
+  # vim colors
   bright:
-    black:   "0xF8F8F2"
-    red:     "0xFF5995"
-    green:   "0xB6E354"
-    yellow:  "0xAEA812"
-    blue:    "0x3F78FF"
-    magenta: "0x9E6FFE"
-    cyan:    "0x23CED4"
-    white:   "0xF8F8F2"
+    black:   '0xF8F8F2'
+    red:     '0xFF5995'
+    green:   '0xB6E354'
+    yellow:  '0xAEA812'
+    blue:    '0x3F78FF'
+    magenta: '0x9E6FFE'
+    cyan:    '0x23CED4'
+    white:   '0xF8F8F2'
 
 background_opacity: 1.0
 
 selection:
-  semantic_escape_chars: ",│`|:\'' ()[]{}<>\t"
-  save_to_clipboard: true
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # save_to_clipboard: true
   dynamic_title: true
 
 cursor:
-  style: Block
+  style: Underline
   vi_mode_style: None
   unfocused_hollow: true
 
@@ -76,8 +85,9 @@ mouse:
   triple_click: { threshold: 300 }
   hide_when_typing: true
   url:
-    program: Firefox\ Nightly.app
+    program: Brave\ Browser.app
 
+# Keys (macOS only)
 key_bindings:
   - { key: Add,    mods: Command,            action: IncreaseFontSize }
   - { key: Minus,  mods: Command,            action: DecreaseFontSize }
