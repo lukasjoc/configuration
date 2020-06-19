@@ -37,3 +37,5 @@ export envm_wdir="$HOME/fun"
 export envm_auto_update_days=3
 source $envm/envm
 
+# set C-l command to clear terminal
+bind -x '"\C-l": clear'
