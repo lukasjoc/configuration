@@ -1,6 +1,9 @@
 # ~/.bashrc: executed for non-login shells.
 # init defaults
-source /etc/bashrc
+
+for bash_file in "/etc/bashrc" "/etc/bash.bashrc"; do
+	[[ -f $bash_file ]] && source $bash_file
+done
 
 shopt -s histappend
 shopt -s checkwinsize
