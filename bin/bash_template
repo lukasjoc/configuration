@@ -1,0 +1,41 @@
+#!/bin/bash
+# Author: lukasjoc
+# License:
+# Desc: ...
+
+set -eu
+
+bash_template() {
+
+	# if arglist is emty if it is run default or run help
+	if [[ "$#" == 0 ]]; then
+		echo "argument input was $#"
+	fi
+
+	# EXAMPLE: do something for specific subcommand
+	# if [[ "${1:-}" == "SUBCOMMAND" ]]; then
+	# 	echo "do something for this command"
+	# fi
+
+	# EXAMPLE: check if argument is set
+	# if [[ -n "${1:-}" ]]; then
+	# 	echo "first argument is set with $1"
+	# fi
+
+	if [[ "${1:-}" = "--version" ]]; then
+		printf '%s\n' "bash_template version 0.1.0"
+	fi
+
+	if [[ "${1:-}" == "test_command" ]]; then
+		echo "$@ was executed as first command"
+	fi
+	
+	__usage="
+	Usage: bash_template [--help] [--version] [test_command]
+	"
+
+	if [[ "${1:-}" == "--help" || "$#" -gt 3 ]]; then
+		echo "${__usage:-}"
+	fi
+
+}
