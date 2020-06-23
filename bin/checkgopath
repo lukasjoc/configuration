@@ -3,8 +3,6 @@
 # Author
 set -u
 
-
-
 readonly gopath_local="$(go env GOPATH)"
 readonly gobin_local="$(go env GOBIN)"
 
