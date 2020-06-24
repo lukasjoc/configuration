@@ -1,0 +1,39 @@
+#!/bin/bash
+# Author: lukasjoc
+# License: MIT
+# Desc: Template for argument parsing with getopts
+#######
+set -u
+
+test_getopts() {
+	__usage() {
+		printf '\n%s\n\n' "Template for handling bash scripts with arguments and subcommands"
+		printf '%s\n\n' "USAGE:"
+		printf '%s\n\n'  " test_getopts [ -h ] [ foo ] [ bar ] [ foo ...] [ bar ...]"
+	}
+	
+	# print help if zero args are given
+	if [[ "$#" == "0" ]]; then
+		__usage
+	fi
+
+	## handle single flags upper and lowercase
+	# while getopts ":hsv" opt 2>/dev/null; do
+	local opt
+	local OPTARG
+	local OPTIND
+	while getopts ":hs" opt; do
+		case ${opt} in
+			s) echo "$(uname -a)"; return 0;;
+			h) __usage; return 1;;
+			\?) echo "Invalid Option: -$OPTARG" 1>&2;  return 1;;
+		esac
+	done
+	
+	local cmd
+	cmd="${1:-}"; shift
+	case "$cmd" in
+		foo) echo "DOING FOO"; return 0;;
+		bar) echo "DOING BAR"; return 0;;
+	esac
+}
