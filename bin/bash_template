@@ -21,16 +21,16 @@ bash_template() {
 	# 	echo "first argument is set with $1"
 	# fi
 
-	if [[ "${1:-}" == "--version" ]]; then
+	if [[ "$1" = "--version" ]]; then
 		printf '%s\n' "bash_template version 0.1.0"
 	fi
 
-	if [[ "${1:-}" == "test_command" ]]; then
+	if [[ "${1:-}" = "test_command" ]]; then
 		echo "$@ was executed as first command"
 	fi
 	
-	readonly  usage="Usage: bash_template [--help] [--version] [test_command]"
-	if [[ "${1:-}" == "--help" ]]; then
+	local usage="Usage: bash_template [--help] [--version] [test_command]"
+	if [[ "$1" = "--help" ]]; then
 		echo "${usage:-}"
 	fi
 
