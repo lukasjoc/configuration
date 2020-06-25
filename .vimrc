@@ -22,7 +22,6 @@ set ruler
 set paste
 
 set encoding=utf-8
-set background=dark
 set belloff=all
 set showcmd
 set noswapfile
@@ -32,12 +31,19 @@ set autoread
 set updatetime=300
 set mouse=a
 
-colorscheme unicon
+set nocompatible
+set viminfo='20,<1000,s1000
 
+" dark(lighter pastel colors): 5-23:
+" light(darker richer colors): 4-0 :
+colorscheme unicon
+set background=dark
+if strftime('%H') <= 4
+	set background=light
+endif
 syntax enable
 
 if has("autocmd")
-	
 	augroup skels
 		au BufNewFile *.*sh 0r $HOME/.vim/skels/skel
 		au BufNewFile *.py 0r $HOME/.vim/skels/skel.py
@@ -51,7 +57,7 @@ if has("autocmd")
 	
 	augroup commenting
 		au FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
-		au FileType sh,yml,yaml,bash,python,nim				 let b:comment_leader = "# "
+		au FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
 		au FileType vim let b:comment_leader = '" '
 		au FileType tex let b:comment_leader = "% "
 		au FileType sql let b:comment_leader = "-- "
@@ -60,12 +66,11 @@ if has("autocmd")
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
 
 	augroup makes
-		au	FileType tex set makeprg=pdflatex\ %
-		au	FileType js set makeprg=node\ %
-		au	FileType python set makeprg=python3\ %
-		au	FileType cpp set makeprg=g++\ %
-		au	FileType c	set makeprg=gcc\  %	
+		au FileType tex set makeprg=pdflatex\ %
+		au FileType js set makeprg=node\ %
+		au FileType python set makeprg=python3\ %
+		au FileType cpp set makeprg=g++\ %
+		au FileType c set makeprg=gcc\  %
 	augroup END
-
 endif
 

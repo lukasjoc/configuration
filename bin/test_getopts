@@ -24,7 +24,7 @@ test_getopts() {
 	local OPTIND
 	while getopts ":hs" opt; do
 		case ${opt} in
-			s) echo "$(uname -a)"; return 0;;
+			s) uname -a; return 0;;
 			h) __usage; return 1;;
 			\?) echo "Invalid Option: -$OPTARG" 1>&2;  return 1;;
 		esac

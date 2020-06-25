@@ -26,7 +26,7 @@ bash_template() {
 	fi
 
 	if [[ "${1:-}" = "test_command" ]]; then
-		echo "$@ was executed as first command"
+		echo "$* was executed as first command"
 	fi
 	
 	local usage="Usage: bash_template [--help] [--version] [test_command]"
