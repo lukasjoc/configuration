@@ -1,8 +1,9 @@
+#!/bin/bash
 # ~/.bashrc: executed for non-login shells.
 # init defaults
 
 for bash_file in "/etc/bashrc" "/etc/bash.bashrc"; do
-	[[ -f $bash_file ]] && source $bash_file
+	[[ -f "$bash_file" ]] && source "$bash_file"
 done
 
 shopt -s histappend
@@ -12,12 +13,13 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 # On Linux systems the XDG paths are automatically set but on most darwin based and BSD based systems
-# i found that these are not set anywhere.. /etc/bashrc or more
+# I found that these are not set anywhere.. /etc/bashrc or more
 export XDG_CONFIG_HOME=$HOME/.config # configs
 export XDG_CACHE_HOME=$HOME/.cache # user cache/meta data
 export XDG_DATA_HOME=$HOME/.local/share # relevant user data
 
 export EDITOR="vim"
+export TERM="screen-256color"
 export CLICOLOR=1
 
 export PATH="/usr/local/bin:$PATH"
@@ -39,10 +41,12 @@ export PATH=$GOPATH/bin:$PATH
 export TEXMFHOME="$HOME/Library/texmf"
 
 # EnvM stuff
-export envm="$HOME/.envm"
-export envm_wdir="$HOME/fun"
-export envm_auto_update_days=3
-source $envm/envm
+export ENVM="$HOME/.envm"
+export ENVM_WDIR="$HOME/fun"
+export ENVM_AUTO_UPDATE_DAYS=3
+source "$ENVM/envm"
+# ----------
 
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
+

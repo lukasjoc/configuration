@@ -1,13 +1,17 @@
 #!/bin/bash
 
 # bash setup
-cp -a .bashrc .bash_profile .profile $HOME
+cp -a \
 
-# vim setup
-cp -a .vim .vimrc .gvimrc $HOME
+	# bash setup
+	.bashrc .bash_profile .profile \
 
-# tmux and inputrc
-cp -a .tmux.conf .inputrc $HOME
+	# vim setup
+	.vim .vimrc .gvimrc \
+	
+	# tmux and inputrc
+	.tmux.conf .inputrc \
+	
+	# git setup
+	.gitconfig .gitignore "$HOME"
 
-# git setup
-cp -a .gitconfig .gitignore $HOME
