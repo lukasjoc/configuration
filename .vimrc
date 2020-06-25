@@ -45,12 +45,14 @@ set mouse=a
 set nocompatible
 set viminfo='20,<1000,s1000
 
-" dark(lighter pastel colors): 5-23:
-" light(darker richer colors): 4-0 :
+" dark(lighter pastel colors): 5-19:
+" light(darker richer colors): 20-4:
 colorscheme unicon
 set background=dark
-if strftime('%H') <= 4
-	set background=light
+if strftime('%H') > 20
+	 if strftime('%H') > 5
+		set background=light
+	endif
 endif
 syntax enable
 
