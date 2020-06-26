@@ -50,3 +50,6 @@ source "$ENVM/envm"
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
+
+# Source private variables
+source "$HOME/.private"
