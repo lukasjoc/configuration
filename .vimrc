@@ -50,7 +50,7 @@ set viminfo='20,<1000,s1000
 colorscheme unicon
 set background=dark
 if strftime('%H') > 20
-	 if strftime('%H') > 5
+	 if strftime('%H') < 5
 		set background=light
 	endif
 endif
