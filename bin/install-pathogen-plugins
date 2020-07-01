@@ -8,9 +8,9 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ##
 
 ##Plugins
-git clone git://github.com/zah/nim.vim.git ~/.vim/bundle/vim-nim
-git clone git://github.com/wakatime/vim-wakatime.git ~/.vim/bundle/vim-wakatime
-git clone https://github.com/cespare/vim-toml.git ~/.vim/bundle/vim-toml
-git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
-git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
+git clone git@github.com:zah/nim.vim.git ~/.vim/bundle/vim-nim
+git clone git@github.com:wakatime/vim-wakatime.git ~/.vim/bundle/vim-wakatime
+git clone git@github.com:cespare/vim-toml.git ~/.vim/bundle/vim-toml
+git clone git@github.com:fatih/vim-go.git ~/.vim/bundle/vim-go
+git clone --depth=1 git@github.com:vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 ##
