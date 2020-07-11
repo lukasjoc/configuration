@@ -1,120 +1,50 @@
-jochamlu::kaizen ~$ l
--bash: l: command not found
-jochamlu::kaizen ~$ ls
-Applications/           Downloads/              Movies/                 Postman/                Untitled/               fun/
-Desktop/                Games/                  Music/                  Public/                 VirtualBoxVMs/          shsgfhasgdfjhsgfkhjagf/
-Documents/              Library/                Pictures/               UNLICENSE               Zotero/
-jochamlu::kaizen ~$ ll
-total 528
-drwxr-xr-x+ 67 jochamlu  staff   2.1K Jul 10 15:18 ./
-drwxr-xr-x   5 root      admin   160B Mar 17 15:52 ../
--r--------   1 jochamlu  staff     7B Apr  5 18:02 .CFUserTextEncoding
--rw-r--r--@  1 jochamlu  staff    14K Jul 10 10:57 .DS_Store
--rw-r--r--   1 jochamlu  staff   2.2K Jun 29 00:45 .Rhistory
-drwx------   2 jochamlu  staff    64B Jul  3 21:29 .Trash/
--rw-r--r--   1 jochamlu  staff    95B Apr  5 19:11 .Xmodmap
-drwxr-x---@  4 jochamlu  staff   128B Jul  3 21:40 .android/
--rw-------   1 jochamlu  staff   130K Jul 10 12:18 .bash_history
--rw-r--r--   1 jochamlu  staff    34B Jun 19 19:06 .bash_profile
-drwx------  19 jochamlu  staff   608B Jul 10 12:18 .bash_sessions/
--rw-r--r--   1 jochamlu  staff   1.3K Jun 26 11:57 .bashrc
-drwxr-xr-x  20 jochamlu  staff   640B May 23 11:19 .byobu/
-drwxr-xr-x   5 jochamlu  staff   160B Jun 20 13:27 .cache/
-drwxr-xr-x   7 jochamlu  staff   224B May 24 19:04 .cargo/
-drwxr-xr-x  11 jochamlu  staff   352B Jul 10 10:27 .config/
-drwxr-xr-x   5 jochamlu  staff   160B Jul  8 19:41 .docker/
-drwxr-xr-x   9 jochamlu  staff   288B Jun 28 13:30 .envm/
-drwxr-xr-x   4 jochamlu  staff   128B Jun 28 15:27 .gem/
--rwxr-xr-x   1 jochamlu  staff   397B Jun 26 10:30 .gitconfig*
--rw-r--r--   1 jochamlu  staff   728B Jun 26 14:39 .gitignore
-jochamlu::kaizen fun$ l
--bash: l: command not found
-jochamlu::kaizen fun$ ss^C
-jochamlu::kaizen fun$ tmux 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        docker volume prune -f                                                                                                                                                                                    [0/1861]
-        docker network prune -f                                                                                                                                                                                           
+#!/bin/bash
+
+# Message on SHELL start
+figlet "Hello, $USER" || echo "Hello, $USER"
+neofetch || true
+fortune || true
+##########
+
+# list docker info neatly and with color
+cooldocker() {
+
+        local ic nc vc cc
+
+        cc=$(docker container ls -aq | wc -l | sed 's/ //g')
+        echo -e "\n[ \e[36m$cc\e[0m ] | CONTAINERS:"
+        docker container ls | while read -r line; do
+                if echo "$line" | grep -q "CONTAINER ID"; then
+                echo -e "$line\t IP ADDRESS"
+                else
+                        cid=$(echo "$line" | awk '{print $1}');
+                        cip=$(docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$cid");
+                echo -e "${line}\t${cip}\n\n"
+          fi
+        done
+
+        ic=$(docker images -q | wc -l | sed 's/ //g' ) 
+        echo -e "[ \e[36m$ic\e[0m ] | IMAGES:"
+        docker images && echo
+
+        nc=$(docker network ls -q | wc -l | sed 's/ //g')
+        echo -e "[ \e[36m$nc\e[0m ] | NETS:"
+        docker network ls && echo
+
+        vc=$(docker volume ls -q | wc -l | sed 's/ //g')
+        if [ "$vc" -ge 1 ]; then
+                echo -e "[ \e[36m$vc\e[0m ] | VOLUMES:"
+                docker volume ls && echo
+        fi
+
+}
+
+# stop, remove all containers, images, volumes, networks
+killdocker() {
+        docker stop "$(docker container ls -aq)"
+        docker rm "$(docker container ls -aq)"
+        docker volume prune -f
+        docker network prune -f
         docker rmi "$(docker images -aq)"
 }
 
