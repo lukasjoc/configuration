@@ -57,6 +57,12 @@ inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_autoEndFunction = 0
+let g:pdv_cfg_autoEndClass = 0
+" let g:pdv_cfg_annoation_Package = 0
+" let g:pdv_cfg_annoation_Version = 0
+" let g:pdv_cfg_annoation_Author = 0
+" let g:pdv_cfg_annoation_Copyright = 0
+" let g:pdv_cfg_annoation_License = 0
 
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
