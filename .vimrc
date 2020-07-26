@@ -1,15 +1,22 @@
-" Author: Lukas Jocham [https://lukasjoc.com]
-" URL:	https://github.com/lukasjoc/dotfiles/tree/master/.vimrc
-" License: MIT
-" Last Change: 30.05.20
-" Version: 1.0
-" Descrition: Vim, MacVim configuration with pathogen as plugin manager, template files
+" Location: $HOME/.vimrc
+" Author: Lukas Jocham [https://lukasjoc.com]GGG
+" Descrition: Vim configuration with vim-plug as plugin manager, template files
 " and commenting
 
-" Pathogen Plugin Manager because vim-plug requires single quotes ;(
-call pathogen#infect()
+call plug#begin('~/.vim/plugged')
+	Plug 'scrooloose/syntastic'
+	Plug 'itchyny/lightline.vim'
+	Plug 'cespare/vim-toml'
+	Plug 'wakatime/vim-wakatime'
+	
+	" Go Setup
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" Syntastic Linting
+	Plug 'Rican7/php-doc-modded'
+	
+call plug#end()
+
+" Syntastic Settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -18,7 +25,38 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors=1
+let g:syntastic_sort_aggregate_errors=1
+let g:syntastic_id_checkers=1
+let g:syntastic_cursor_column=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_highlighting=1
+let g:syntastic_error_symbol='x'
+let g:syntastic_warning_symbol='!'
+let g:syntastic_mode='active'
+let g:syntastic_php_checkers=1
+let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': ['php'], 'passive_filetypes': [] }
+unlet g:syntastic_php_checkers
+let g:syntastic_php_checkers = ["php", "phpcs"]
+let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
 
+" Lightline Settings
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
+set laststatus=2
+let g:lightline = { 'colorscheme': 'molokai' }
+
+" Wakatime Settings
+let g:wakatime_PythonBinary = '/usr/bin/python3'
+
+" php doc modded
+" source $HOME/.vim/plugged/plugin/php-doc.vim
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-P> :call PhpDocSingle()<CR> 
+vnoremap <C-P> :call PhpDocRange()<CR> 
+let g:pdv_cfg_autoEndFunction = 0
 
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
@@ -40,24 +78,17 @@ set nobackup
 set autowrite
 set autoread
 set updatetime=300
-set mouse=a
+
+set background=light
+colorscheme unicon
+syntax enable
 
 set nocompatible
 set viminfo='20,<1000,s1000
 
-" dark(lighter pastel colors): 5-19:
-" light(darker richer colors): 20-4:
-colorscheme unicon
-set background=dark
-if strftime('%H') > 20
-	 if strftime('%H') < 5
-		set background=light
-	endif
-endif
-syntax enable
-
 if has("autocmd")
-	augroup skels
+
+	augroup Skels
 		au BufNewFile *.*sh 0r $HOME/.vim/skels/skel
 		au BufNewFile *.py 0r $HOME/.vim/skels/skel.py
 		au BufNewFile *.js,*.ts 0r $HOME/.vim/skels/skel.js
@@ -66,10 +97,12 @@ if has("autocmd")
 		au BufNewFile *.html 0r $HOME/.vim/skels/skel.html
 		au BufNewFile *.vue setfiletype html
 		au BufNewFile *.vue 0r $HOME/.vim/skels/skel.vue
+		au BufNewFile *.php 0r $HOME/.vim/skels/skel.php
 	augroup END
 	
-	augroup commenting
-		au FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
+	augroup Commenting
+		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
+
 		au FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
 		au FileType vim let b:comment_leader = '" '
 		au FileType tex let b:comment_leader = "% "
@@ -78,7 +111,7 @@ if has("autocmd")
 	noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
 
-	augroup makes
+	augroup Makes
 		au FileType tex set makeprg=pdflatex\ %
 		au FileType js set makeprg=node\ %
 		au FileType python set makeprg=python3\ %

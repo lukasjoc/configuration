@@ -1,12 +1,10 @@
 #!/bin/bash
 
-declare -a conflicts
-
 go_ls() {
   find . -name "*CONFLICT*" |
   while IFS= read -r line
   do
-    echo $line
+    echo "$line"
   done
 }
 
@@ -14,7 +12,7 @@ go_for_it() {
   find . -name "*CONFLICT*" |
   while IFS= read -r line
   do
-    sudo rm -rf $line
+    sudo rm -rf "$line"
   done
 }
 
