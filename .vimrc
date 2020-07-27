@@ -51,18 +51,16 @@ let g:lightline = { 'colorscheme': 'molokai' }
 " Wakatime Settings
 let g:wakatime_PythonBinary = '/usr/bin/python3'
 
-" php doc modded
-" source $HOME/.vim/plugged/plugin/php-doc.vim
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_autoEndFunction = 0
 let g:pdv_cfg_autoEndClass = 0
-" let g:pdv_cfg_annoation_Package = 0
-" let g:pdv_cfg_annoation_Version = 0
-" let g:pdv_cfg_annoation_Author = 0
-" let g:pdv_cfg_annoation_Copyright = 0
-" let g:pdv_cfg_annoation_License = 0
+let g:pdv_cfg_annoation_Package = 0
+let g:pdv_cfg_annoation_Version = 0
+let g:pdv_cfg_annoation_Author = 0
+let g:pdv_cfg_annoation_Copyright = 0
+let g:pdv_cfg_annoation_License = 0
 
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
@@ -100,6 +98,7 @@ if has("autocmd")
 		au BufNewFile *.js,*.ts 0r $HOME/.vim/skels/skel.js
 		au BufNewFile *.md	0r $HOME/.vim/skels/skel.md
 		au BufNewFile *.c 0r $HOME/.vim/skels/skel.c
+		au BufNewFile *.cpp 0r $HOME/.vim/skels/skel.cpp
 		au BufNewFile *.html 0r $HOME/.vim/skels/skel.html
 		au BufNewFile *.vue setfiletype html
 		au BufNewFile *.vue 0r $HOME/.vim/skels/skel.vue
@@ -108,7 +107,6 @@ if has("autocmd")
 	
 	augroup Commenting
 		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
-
 		au FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
 		au FileType vim let b:comment_leader = '" '
 		au FileType tex let b:comment_leader = "% "

@@ -1,5 +1,5 @@
 <template>
-<div class="test">{{test}}</div>
+	<div class="test">{{test}}</div>
 </template>
 
 <script>
@@ -17,3 +17,4 @@
 		background-color: #ff000;
 	}
 </style
+

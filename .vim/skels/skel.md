@@ -1,3 +1,4 @@
-# .md skel
+# Md Template
 
 [lukasjoc](https://lukasjoc.com), 2020
+

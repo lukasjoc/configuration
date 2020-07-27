@@ -3,5 +3,5 @@
 using namespace std;
 
 int main() {
-	cout << "Hello C++ World";
+	cout << "C++ Template";
 }
