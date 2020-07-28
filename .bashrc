@@ -24,6 +24,7 @@ export TERM="screen-256color"
 export CLICOLOR=1
 
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 	
@@ -33,10 +34,10 @@ export RUSTBIN="$HOME/.cargo/bin"
 export PATH=$RUST_SRC_PATH/bin:$PATH
 
 # Go
-export GOPATH="$HOME/.go/"
+export GOPATH="$HOME/.go"
 export GOBIN="$GOPATH/bin"
 export GO111MODULE=on
-export PATH=$GOPATH/bin:$PATH
+export PATH=$GOBIN:$PATH
 
 # LaTeX
 export TEXMFHOME="$HOME/Library/texmf"
