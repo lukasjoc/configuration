@@ -1,16 +1,19 @@
 #!/bin/bash
 # ~/.bashrc: executed for non-login shells.
-# init defaults
 
-for bash_file in "/etc/bashrc" "/etc/bash.bashrc"; do
-	[[ -f "$bash_file" ]] && source "$bash_file"
-done
+# If not running interactively, don't do anything
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+
+# dont put duplicate lines in history, lines that start with a space
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 shopt -s histappend
 shopt -s checkwinsize
-
-HISTSIZE=10000
-HISTFILESIZE=20000
 
 #export XDG_CONFIG_HOME=$HOME/.config # configs
 #export XDG_CACHE_HOME=$HOME/.cache # user cache/meta data

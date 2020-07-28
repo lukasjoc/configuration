@@ -3,6 +3,11 @@ $include /etc/inputrc
 set bell-style none
 set show-all-if-ambiguous on
 set expand-tilde off
+set mark-symlinked-directories on
+set input-meta on
+set output-meta on
+set convert-meta off
+set completion-query-items 100
 
 "\e[A": history-search-backward
 "\e[B": history-search-forward

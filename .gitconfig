@@ -1,20 +1,38 @@
 [user]
-  email = 45790416+lukasjoc@users.noreply.github.com
-  name = lukasjoc
+	email=jochamlu@gmail.com
+	name=lukasjoc
+
 [core]
-  autocrlf = false
-  excludesfile = $HOME/.gitignore
-  quotepath = false
+	autocrlf=false
+	excludesfile=.gitignore
+	quotepath=false
+	editor=vim
+
+[apply]
+	whitespace=fix
+	
 [help]
-  autocorrect = 9
+	autocorrect=1
+
+[color]
+	ui=auto
+
 [alias]
-  br=branch
-  ch=checkout
-  st=status
+	br=branch
+	ch=checkout
+	st=status
+
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean=git-lfs clean -- %f
+	smudge=git-lfs smudge -- %f
+	process=git-lfs filter-process
+	required=true
+
+[diff]
+	renames=copies
+
 [pull]
-	rebase = false
+	rebase=true
+
+[merge]
+	log=true

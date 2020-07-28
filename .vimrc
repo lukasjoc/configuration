@@ -1,22 +1,16 @@
-" Location: $HOME/.vimrc
-" Author: Lukas Jocham [https://lukasjoc.com]GGG
-" Descrition: Vim configuration with vim-plug as plugin manager, template files
-" and commenting
+" Vim Configuration
+" Author: lukasjoc
 
 call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'itchyny/lightline.vim'
 	Plug 'cespare/vim-toml'
 	Plug 'wakatime/vim-wakatime'
-	
-	" Go Setup
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 	Plug 'Rican7/php-doc-modded'
-	
 call plug#end()
 
-" Syntastic Settings
+" syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -40,17 +34,18 @@ unlet g:syntastic_php_checkers
 let g:syntastic_php_checkers = ["php", "phpcs"]
 let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
 
-" Lightline Settings
-if !has('gui_running')
-  set t_Co=256
-endif
+" lightline settings
 set noshowmode
 set laststatus=2
 let g:lightline = { 'colorscheme': 'molokai' }
+if !has('gui_running')
+	set t_Co=256
+endif
 
-" Wakatime Settings
+" wakatime settings
 let g:wakatime_PythonBinary = '/usr/bin/python3'
 
+" php-doc-modded settings
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
@@ -122,5 +117,6 @@ if has("autocmd")
 		au FileType cpp set makeprg=g++\ %
 		au FileType c set makeprg=gcc\  %
 	augroup END
+
 endif
 
