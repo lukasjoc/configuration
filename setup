@@ -42,7 +42,7 @@ if [[ "$1" == "vim-extended" ]]; then
 	done
 	
 	# Skels
-	for skel in .vim/skels/skel.*; do
+	for skel in .vim/skels/skel*; do
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
 

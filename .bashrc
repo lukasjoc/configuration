@@ -53,4 +53,4 @@ source "$ENVM/envm"
 bind -x '"\C-l": clear'
 
 # Source private variables
-# source "$HOME/.private"
+source "$HOME/.private"
