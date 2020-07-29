@@ -15,9 +15,9 @@ HISTFILESIZE=2000
 shopt -s histappend
 shopt -s checkwinsize
 
-#export XDG_CONFIG_HOME=$HOME/.config # configs
-#export XDG_CACHE_HOME=$HOME/.cache # user cache/meta data
-#export XDG_DATA_HOME=$HOME/.local/share # relevant user data
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 
 export EDITOR="vim"
 export TERM="screen-256color"

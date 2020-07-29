@@ -25,23 +25,20 @@ done
 if [[ "$1" == "vim-extended" ]]; then
 
 	# Setup Vimrc
-	ln -s \
+	ln -sf \
 		"$PWD/.vimrc" "$HOME/.vimrc" && \
 		"$PWD/.gvimrc" "$HOME/.gvimrc"
 
 	# vim-plug
-	curl -flo ~/.vim/autoload/plug.vim --create-dirs \
+	curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	
-	[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
-	[[ -d $HOME/.vim/colors ]] || mkdir "$HOME/.vim/colors"
 
-	# Colors
-	for color in .vim/colors/*.vim; do
-		ln -sf "$PWD/$color" "$HOME/$color"
-	done
-	
-	# Skels
+	# Color Scheme
+	curl -flo "$HOME/.vim/colors/unicon.vim" --create-dirs \
+		 https://raw.githubusercontent.com/lukasjoc/vim-unicon/master/colors/unicon.vim
+
+	# Skelets
+	[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
 	for skel in .vim/skels/skel*; do
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
