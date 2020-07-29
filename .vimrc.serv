@@ -8,38 +8,15 @@ filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
 set tabstop=2 shiftwidth=2 noexpandtab
 set backspace=indent,eol,start
-
 set hidden
 set list
 set number
 set incsearch hlsearch
 set ruler
-set paste
-
+set ai
 set encoding=utf-8
-set belloff=all
-set showcmd
-set noswapfile
-set nobackup
-set autowrite
-set autoread
-set updatetime=300
-
 set nocompatible
-set viminfo='20,<1000,s1000
-
-colorscheme slate
 set background=light
+colorscheme kohler
 syntax enable
 
-if has("autocmd")
-        augroup commenting
-                au FileType c,cpp,rust,javascript,java,scala,go let b:comment_leader = "// "
-                au FileType sh,yml,yaml,bash,python,nim let b:comment_leader = "# "
-                au FileType vim let b:comment_leader = '" '
-                au FileType tex let b:comment_leader = "% "
-                au FileType sql let b:comment_leader = "-- "
-        augroup END
-        noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
-        noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
-endif

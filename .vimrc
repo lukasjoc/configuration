@@ -68,6 +68,7 @@ set number
 set incsearch hlsearch
 set ruler
 set paste
+set ai
 
 set encoding=utf-8
 set belloff=all
