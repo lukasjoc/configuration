@@ -59,7 +59,12 @@ let g:pdv_cfg_annoation_License = 0
 
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
-set tabstop=2 shiftwidth=2 noexpandtab
+" Go uses tabs for gofmt so go stuff with the go plugin uses tabs per default - That's the community
+" So dont wonder if you would ever want to switch to spaces instead of tabs with set expandtabs
+" Python will convert to spaces. So I prefer tabs \t but \xA0 are also ok
+set tabstop=2
+set shiftwidth=2
+set noexpandtab
 set backspace=indent,eol,start
 
 set hidden
@@ -79,11 +84,9 @@ set autowrite
 set autoread
 set updatetime=300
 
-set background=light
+set background=dark
 colorscheme unicon
 syntax enable
-
-set nocompatible
 set viminfo='20,<1000,s1000
 
 if has("autocmd")

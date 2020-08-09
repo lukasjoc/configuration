@@ -36,3 +36,5 @@
 
 [merge]
 	log=true
+[http]
+	cookiefile = /Users/jochamlu/.gitcookies
