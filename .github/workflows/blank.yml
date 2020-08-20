@@ -13,5 +13,4 @@ jobs:
     - name: Check the setup script
       run: |
         sudo apt-get install bash
-        mkdir $HOME/config
         bash setup --complete

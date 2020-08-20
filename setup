@@ -41,13 +41,12 @@ if [[ "$1" == "--complete" ]]; then
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
 
-
-	# $PWD/.config/ setup
-	
-	# Alacritty
+	# Alacrity
+	mkdir -p $HOME/.config/alacritty || true
 	ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 	
 	# Neofetch
+	mkdir -p $HOME/.config/neofetch || true
 	ln -sf "$PWD/.config/neofetch/config.config" "$HOME/.config/neofetch/config.conf"
 
 	echo "DONE.. Open Vim and type  ESC + :PlugInstall"
