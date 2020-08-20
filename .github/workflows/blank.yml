@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Check the setup script
-      run: ./setup --complete
+      run: bash setup --complete
