@@ -3,26 +3,21 @@
 declare -a dotfiles
 
 dotfiles=(
-	# Bash Config
 	".profile"
 	".bash_profile"
 	".bashrc"
-
-	# Miscellaneous
 	".tmux.conf"
 	".inputrc"
-
-	# Git Config
 	".gitconfig"
 )
 
 # Basic Config
+echo "Linking dotfiles..."
 for file in "${dotfiles[@]}"; do
-	echo "Linking dotfiles..."
 	ln -sf "$PWD/$file" "$HOME/$file"
 done
 
-if [[ "$1" == "vim-extended" ]]; then
+if [[ "$1" -eq "--complete" ]]; then
 
 	echo "Linking vim files..."
 	# Setup Vimrc
