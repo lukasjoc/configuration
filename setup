@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 declare -a dotfiles
 
@@ -21,9 +22,8 @@ if [[ "$1" == "--complete" ]]; then
 
 	echo "Linking vim files..."
 	# Setup Vimrc
-	ln -sf \
-		"$PWD/.vimrc" "$HOME/.vimrc" && \
-		"$PWD/.gvimrc" "$HOME/.gvimrc"
+	ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
+	ln -sf "$PWD/.gvimrc" "$HOME/.gvimrc"
 	
 	echo "Pulling package manager and color scheme..."
 	# vim-plug
