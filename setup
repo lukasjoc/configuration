@@ -18,15 +18,19 @@ dotfiles=(
 
 # Basic Config
 for file in "${dotfiles[@]}"; do
+	echo "Linking dotfiles..."
 	ln -sf "$PWD/$file" "$HOME/$file"
 done
 
 if [[ "$1" == "vim-extended" ]]; then
+
+	echo "Linking vim files..."
 	# Setup Vimrc
 	ln -sf \
 		"$PWD/.vimrc" "$HOME/.vimrc" && \
 		"$PWD/.gvimrc" "$HOME/.gvimrc"
-
+	
+	echo "Pulling package manager and color scheme..."
 	# vim-plug
 	curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -36,6 +40,7 @@ if [[ "$1" == "vim-extended" ]]; then
 		https://raw.githubusercontent.com/lukasjoc/vim-unicon/master/colors/unicon.vim
 
 	# Skelets
+	echo "Linking vim skelet files... "
 	[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
 	for skel in .vim/skels/skel*; do
 		ln -sf "$PWD/$skel" "$HOME/$skel"
