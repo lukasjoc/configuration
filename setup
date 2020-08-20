@@ -40,6 +40,17 @@ if [[ "$1" == "--complete" ]]; then
 	for skel in .vim/skels/skel*; do
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
+
+
+	# $PWD/.config/ setup
+	
+	# Alacritty
+	ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+	
+	# Neofetch
+	ln -sf "$PWD/.config/neofetch/config.config" "$HOME/.config/neofetch/config.conf"
+
+
 	echo "DONE.. Open Vim and type  ESC + :PlugInstall"
 fi
 
