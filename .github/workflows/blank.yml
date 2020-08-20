@@ -1,4 +1,4 @@
-name: Check Setup script
+name: Check setup script
 
 on:
   push:

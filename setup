@@ -28,12 +28,12 @@ if [[ "$1" == "vim-extended" ]]; then
 		"$PWD/.gvimrc" "$HOME/.gvimrc"
 
 	# vim-plug
-	# curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
-	#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-	# Color Scheme
-	# curl -flo "$HOME/.vim/colors/unicon.vim" --create-dirs \
-	# 	 https://raw.githubusercontent.com/lukasjoc/vim-unicon/master/colors/unicon.vim
+	# Unicon Scheme
+	curl -flo "$HOME/.vim/colors/unicon.vim" --create-dirs \
+		https://raw.githubusercontent.com/lukasjoc/vim-unicon/master/colors/unicon.vim
 
 	# Skelets
 	[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
