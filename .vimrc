@@ -1,6 +1,7 @@
 " Vim Configuration
 " Author: lukasjoc
 
+" I kind of hate vim-plug for single quotes here ...
 call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'itchyny/lightline.vim'
@@ -8,6 +9,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'wakatime/vim-wakatime'
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'Rican7/php-doc-modded'
+	Plug 'felipec/notmuch-vim'
+	Plug 'posva/vim-vue'
+	Plug 'pangloss/vim-javascript'
+	Plug 'mattn/emmet-vim'
 call plug#end()
 
 " syntastic settings
@@ -27,9 +32,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_enable_highlighting=1
 let g:syntastic_error_symbol='x'
 let g:syntastic_warning_symbol='!'
-let g:syntastic_mode='active'
+let g:syntastic_mode="active"
 let g:syntastic_php_checkers=1
-let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': ['php'], 'passive_filetypes': [] }
+let g:syntastic_mode_map={ "mode": "active", "active_filetypes": ["php"], "passive_filetypes": [] }
 unlet g:syntastic_php_checkers
 let g:syntastic_php_checkers = ["php", "phpcs"]
 let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
@@ -37,13 +42,13 @@ let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
 " lightline settings
 set noshowmode
 set laststatus=2
-let g:lightline = { 'colorscheme': 'molokai' }
-if !has('gui_running')
+let g:lightline = { "colorscheme": "molokai" }
+if !has("gui_running")
 	set t_Co=256
 endif
 
 " wakatime settings
-let g:wakatime_PythonBinary = '/usr/bin/python3'
+let g:wakatime_PythonBinary = "/usr/bin/python3"
 
 " php-doc-modded settings
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
@@ -57,10 +62,16 @@ let g:pdv_cfg_annoation_Author = 0
 let g:pdv_cfg_annoation_Copyright = 0
 let g:pdv_cfg_annoation_License = 0
 
+" vue
+let g:vue_pre_processors = ["scss"]
+
+" emmet
+let g:user_emmet_leader_key=','
+
 filetype plugin indent on
 set listchars=tab:\ \ ,trail:.
 " Go uses tabs for gofmt so go stuff with the go plugin uses tabs per default - That's the community
-" So dont wonder if you would ever want to switch to spaces instead of tabs with set expandtabs
+" So don't wonder if you would ever want to switch to spaces instead of tabs with set expandtabs
 " Python will convert to spaces. So I prefer tabs \t but \xA0 are also ok
 set tabstop=2
 set shiftwidth=2
@@ -85,7 +96,8 @@ set autoread
 set updatetime=300
 
 set background=dark
-colorscheme unicon
+" colorscheme unicon
+colorscheme koehler
 syntax enable
 set viminfo='20,<1000,s1000
 
@@ -119,7 +131,7 @@ if has("autocmd")
 		au FileType js set makeprg=node\ %
 		au FileType python set makeprg=python3\ %
 		au FileType cpp set makeprg=g++\ %
-		au FileType c set makeprg=gcc\  %
+		au FileType c set makeprg=gcc\ %
 	augroup END
 
 endif
