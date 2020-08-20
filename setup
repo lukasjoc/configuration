@@ -17,7 +17,7 @@ for file in "${dotfiles[@]}"; do
 	ln -sf "$PWD/$file" "$HOME/$file"
 done
 
-if [[ "$1" -eq "--complete" ]]; then
+if [[ "$1" == "--complete" ]]; then
 
 	echo "Linking vim files..."
 	# Setup Vimrc
