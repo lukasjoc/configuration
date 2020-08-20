@@ -41,12 +41,13 @@ if [[ "$1" == "--complete" ]]; then
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
 
+	echo "Linking XDG .config..."
 	# Alacrity
-	mkdir -p $HOME/.config/alacritty || true
+	mkdir -p "$HOME/.config/alacritty"|| true
 	ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 	
 	# Neofetch
-	mkdir -p $HOME/.config/neofetch || true
+	mkdir -p "$HOME/.config/neofetch" || true
 	ln -sf "$PWD/.config/neofetch/config.config" "$HOME/.config/neofetch/config.conf"
 
 	echo "DONE.. Open Vim and type  ESC + :PlugInstall"
