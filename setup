@@ -50,7 +50,6 @@ if [[ "$1" == "--complete" ]]; then
 	# Neofetch
 	ln -sf "$PWD/.config/neofetch/config.config" "$HOME/.config/neofetch/config.conf"
 
-
 	echo "DONE.. Open Vim and type  ESC + :PlugInstall"
 fi
 
