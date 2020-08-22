@@ -1,4 +1,0 @@
-[sshd]
-  port = [CAN_YOU_GUESS_MY_SSH_PORT?]
-  maxentry = 3
-
