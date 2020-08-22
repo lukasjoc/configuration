@@ -1,6 +1,0 @@
-git@github.com:lukasjoc/envm.git
-git@github.com:lukasjoc/lukasjoc.git
-git@github.com:lukasjoc/random.git
-git@github.com:lukasjoc/gogit.git
-git@github.com:lukasjoc/files.git
-git@github.com:lukasjoc/TEST_REPO.git
