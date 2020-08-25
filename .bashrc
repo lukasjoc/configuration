@@ -8,9 +8,10 @@ case $- in
 esac
 
 # dont put duplicate lines in history, lines that start with a space
-HISTCONTROL=ignoreboth
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+export CLICOLOR=1
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -54,3 +55,6 @@ bind -x '"\C-l": clear'
 
 # Source private variables
 source "$HOME/.private"
+
+# start tmux session
+tmux

@@ -1,18 +1,18 @@
-" Vim Configuration
+" Vim ConfigurationG
 " Author: lukasjoc
 
 " I kind of hate vim-plug for single quotes here ...
-call plug#begin('~/.vim/plugged')
+call plug#begin('$HOME/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'itchyny/lightline.vim'
 	Plug 'cespare/vim-toml'
 	Plug 'wakatime/vim-wakatime'
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'Rican7/php-doc-modded'
-	Plug 'felipec/notmuch-vim'
 	Plug 'posva/vim-vue'
-	Plug 'pangloss/vim-javascript'
-	Plug 'mattn/emmet-vim'
+	
+	" Color Scheme
+	Plug 'fcpg/vim-fahrenheit'
 call plug#end()
 
 " syntastic settings
@@ -42,7 +42,8 @@ let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
 " lightline settings
 set noshowmode
 set laststatus=2
-let g:lightline = { "colorscheme": "molokai" }
+let g:lightline = {"colorscheme": "PaperColor"}
+
 if !has("gui_running")
 	set t_Co=256
 endif
@@ -95,9 +96,14 @@ set autowrite
 set autoread
 set updatetime=300
 
-set background=dark
+" set background=dark
 " colorscheme unicon
-colorscheme koehler
+" colorscheme koehler
+" colorscheme falcon
+" colorscheme sourcerer
+" colorscheme gruvebox
+colorscheme fahrenheit
+" coslorscheme vimbrant " perun
 syntax enable
 set viminfo='20,<1000,s1000
 
