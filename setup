@@ -10,6 +10,8 @@ dotfiles=(
 	".tmux.conf"
 	".inputrc"
 	".gitconfig"
+	".dir_colors"
+	".Xresources"
 )
 
 # Basic Config
@@ -41,7 +43,7 @@ if [[ "$1" == "--complete" ]]; then
 		ln -sf "$PWD/$skel" "$HOME/$skel"
 	done
 
-	echo "Linking XDG .config..."
+	echo "Linking .configs..."
 	# Alacrity
 	mkdir -p "$HOME/.config/alacritty"|| true
 	ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"

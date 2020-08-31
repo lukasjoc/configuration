@@ -17,16 +17,16 @@ decorations: full
 
 font:
   normal:
-    family: Iosevka
+    family: Droid Sans Mono
     style: Regular
   bold:
-    family: Iosevka
+    family: Droid Sans Mono
     style: Bold
   italic:
-    family: Iosevka
+    family: Droid Sans Mono
     style: Italic
   bold_italic:
-    family: Iosevka
+    family: Droid Sans Mono
     style: Bold Italic
   size: 13.3
 
@@ -95,5 +95,4 @@ mouse:
 
 print_events: false
 ref_test: false
-
 

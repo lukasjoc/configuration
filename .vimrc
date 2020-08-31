@@ -1,60 +1,72 @@
-" Vim ConfigurationG
+" Vim Configuration
 " Author: lukasjoc
 
-" I kind of hate vim-plug for single quotes here ...
 call plug#begin('$HOME/.vim/plugged')
-	Plug 'scrooloose/syntastic'
-	Plug 'itchyny/lightline.vim'
-	Plug 'cespare/vim-toml'
-	Plug 'wakatime/vim-wakatime'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'Rican7/php-doc-modded'
-	Plug 'posva/vim-vue'
-	
-	" Color Scheme
-	Plug 'fcpg/vim-fahrenheit'
+
+" Code Linting, Formatting, Tracking, Formatting
+Plug 'scrooloose/syntastic'
+Plug 'chiel92/vim-autoformat'
+Plug 'wakatime/vim-wakatime'
+Plug 'chiel92/vim-autoformat'
+
+" Language Extensions
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'posva/vim-vue'
+Plug 'zah/nim.vim'
+Plug 'Rican7/php-doc-modded'
+
+" Color Scheme and Appearance
+Plug 'fcpg/vim-fahrenheit'
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
 " syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_sh_shellcheck_args="-e SC1090"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors=1
 let g:syntastic_sort_aggregate_errors=1
-let g:syntastic_id_checkers=1
-let g:syntastic_cursor_column=1
-let g:syntastic_enable_signs=1
-let g:syntastic_enable_highlighting=1
-let g:syntastic_error_symbol='x'
-let g:syntastic_warning_symbol='!'
+let g:syntastic_id_checkers = 1
+let g:syntastic_cursor_column = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_error_symbol = "X"
+let g:syntastic_warning_symbol = "!"
 let g:syntastic_mode="active"
+
+" Php Stuff
 let g:syntastic_php_checkers=1
-let g:syntastic_mode_map={ "mode": "active", "active_filetypes": ["php"], "passive_filetypes": [] }
+let g:syntastic_mode_map = { "mode": "active", "active_filetypes": ["php"], "passive_filetypes": [] }
 unlet g:syntastic_php_checkers
 let g:syntastic_php_checkers = ["php", "phpcs"]
-let g:syntastic_php_phpcs_args='--report=csv --standard=my_standard'
 
-" lightline settings
+" Python stuff
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
+
+" Shell stuff
+let g:syntastic_sh_shellcheck_args="-e SC1090"
+
+" Lightline settings
 set noshowmode
 set laststatus=2
 let g:lightline = {"colorscheme": "PaperColor"}
-
 if !has("gui_running")
 	set t_Co=256
 endif
 
 " wakatime settings
-let g:wakatime_PythonBinary = "/usr/bin/python3"
+let g:wakatime_PythonBinary = "/usr/local/bin/python3"
 
 " php-doc-modded settings
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 let g:pdv_cfg_autoEndFunction = 0
 let g:pdv_cfg_autoEndClass = 0
 let g:pdv_cfg_annoation_Package = 0
@@ -66,46 +78,28 @@ let g:pdv_cfg_annoation_License = 0
 " vue
 let g:vue_pre_processors = ["scss"]
 
-" emmet
-let g:user_emmet_leader_key=','
-
 filetype plugin indent on
-set listchars=tab:\ \ ,trail:.
-" Go uses tabs for gofmt so go stuff with the go plugin uses tabs per default - That's the community
-" So don't wonder if you would ever want to switch to spaces instead of tabs with set expandtabs
-" Python will convert to spaces. So I prefer tabs \t but \xA0 are also ok
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
+set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
 
+" autoformat
+" au BufWrite * :Autoformat
+
+" noremap <silent> , :<C-,>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
+map <C-d> :Autoformat
+
+" tabs with indent 2
+set tabstop=2 shiftwidth=2 noexpandtab ai
 set hidden
-set list
 set number
 set incsearch hlsearch
-set ruler
 set paste
-set ai
-
 set encoding=utf-8
-set belloff=all
-set showcmd
-set noswapfile
-set nobackup
-set autowrite
-set autoread
-set updatetime=300
-
-" set background=dark
-" colorscheme unicon
-" colorscheme koehler
-" colorscheme falcon
-" colorscheme sourcerer
-" colorscheme gruvebox
-colorscheme fahrenheit
-" coslorscheme vimbrant " perun
-syntax enable
 set viminfo='20,<1000,s1000
+
+colorscheme fahrenheit
+" colorscheme codedark
+syntax enable
 
 if has("autocmd")
 
@@ -116,12 +110,12 @@ if has("autocmd")
 		au BufNewFile *.md	0r $HOME/.vim/skels/skel.md
 		au BufNewFile *.c 0r $HOME/.vim/skels/skel.c
 		au BufNewFile *.cpp 0r $HOME/.vim/skels/skel.cpp
-		au BufNewFile *.html 0r $HOME/.vim/skels/skel.html
+		au BufNewFile *.html  0r $HOME/.vim/skels/skel.html
 		au BufNewFile *.vue setfiletype html
 		au BufNewFile *.vue 0r $HOME/.vim/skels/skel.vue
 		au BufNewFile *.php 0r $HOME/.vim/skels/skel.php
 	augroup END
-	
+
 	augroup Commenting
 		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
 		au FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "

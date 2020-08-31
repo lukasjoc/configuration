@@ -1,9 +1,10 @@
 #!/bin/bash
-# ~/.bashrc: executed for non-login shells.
+# Desc: bash shell config executed for non-login shells.
+# Author: lukasjoc <jochamlu@gmail.com>
 
 # If not running interactively, don't do anything
 case $- in
-	*i*) ;;
+    *i*) ;;
 	*) return;;
 esac
 
@@ -46,7 +47,7 @@ export TEXMFHOME="$HOME/Library/texmf"
 # EnvM stuff
 export ENVM="$HOME/.envm"
 export ENVM_WDIR="$HOME/fun"
-export ENVM_AUTO_UPDATE_DAYS=3
+export ENVM_AUTO_UPDATE_DAYS=30
 source "$ENVM/envm"
 # ----------
 
@@ -56,5 +57,8 @@ bind -x '"\C-l": clear'
 # Source private variables
 source "$HOME/.private"
 
-# start tmux session
-tmux
+# Reload Xresources
+[[ -f ~/.Xresources ]]; xrdb -merge ~/.Xresources
+
+# start tmux session if not nested already
+tmux new-session -A -s kaizen
