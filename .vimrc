@@ -7,7 +7,6 @@ call plug#begin('$HOME/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'chiel92/vim-autoformat'
 Plug 'wakatime/vim-wakatime'
-Plug 'chiel92/vim-autoformat'
 
 " Language Extensions
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -38,12 +37,35 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_error_symbol = "X"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_mode="active"
+let g:syntastic_mode_map = { "mode": "active", "active_filetypes": ["php", "js"], "passive_filetypes": [] }
 
 " Php Stuff
 let g:syntastic_php_checkers=1
-let g:syntastic_mode_map = { "mode": "active", "active_filetypes": ["php"], "passive_filetypes": [] }
 unlet g:syntastic_php_checkers
 let g:syntastic_php_checkers = ["php", "phpcs"]
+
+" php-doc-modded settings
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+let g:pdv_cfg_autoEndFunction = 0
+let g:pdv_cfg_autoEndClass = 0
+let g:pdv_cfg_annoation_Package = 0
+let g:pdv_cfg_annoation_Version = 0
+let g:pdv_cfg_annoation_Author = 0
+let g:pdv_cfg_annoation_Copyright = 0
+let g:pdv_cfg_annoation_License = 0
+
+
+
+" JS stuff
+let g:syntastic_javascript_checkers=1
+unlet g:syntastic_javascript_checkers
+let g:syntastic_javascript_checkers=["eslint"]
+
+" vue
+let g:vue_pre_processors = ["scss"]
+
 
 " Python stuff
 let g:syntastic_python_python_exec = 'python3'
@@ -63,42 +85,30 @@ endif
 " wakatime settings
 let g:wakatime_PythonBinary = "/usr/local/bin/python3"
 
-" php-doc-modded settings
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
-let g:pdv_cfg_autoEndFunction = 0
-let g:pdv_cfg_autoEndClass = 0
-let g:pdv_cfg_annoation_Package = 0
-let g:pdv_cfg_annoation_Version = 0
-let g:pdv_cfg_annoation_Author = 0
-let g:pdv_cfg_annoation_Copyright = 0
-let g:pdv_cfg_annoation_License = 0
+" autoformat"
+" au BufWrite * :Autoformat " on save is a mess
+map <C-d> :Autoformat
 
-" vue
-let g:vue_pre_processors = ["scss"]
-
-filetype plugin indent on
 set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
 
-" autoformat
-" au BufWrite * :Autoformat
-
-" noremap <silent> , :<C-,>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
-map <C-d> :Autoformat
-
 " tabs with indent 2
-set tabstop=2 shiftwidth=2 noexpandtab ai
+filetype plugin indent on
+set autoindent noexpandtab tabstop=2 softtabstop=-1 shiftwidth=2
+"--FINALLY! - AFTER LONG HOURS WE DECIDED ON A MECHANISM TO space out our code
+" WHAT A DAY :=) -
+
 set hidden
 set number
 set incsearch hlsearch
-set paste
+set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
 colorscheme fahrenheit
 " colorscheme codedark
+" colorscheme unicon
+" colorscheme spacecamp
 syntax enable
 
 if has("autocmd")
@@ -107,7 +117,6 @@ if has("autocmd")
 		au BufNewFile *.*sh 0r $HOME/.vim/skels/skel
 		au BufNewFile *.py 0r $HOME/.vim/skels/skel.py
 		au BufNewFile *.js,*.ts 0r $HOME/.vim/skels/skel.js
-		au BufNewFile *.md	0r $HOME/.vim/skels/skel.md
 		au BufNewFile *.c 0r $HOME/.vim/skels/skel.c
 		au BufNewFile *.cpp 0r $HOME/.vim/skels/skel.cpp
 		au BufNewFile *.html  0r $HOME/.vim/skels/skel.html
@@ -136,3 +145,16 @@ if has("autocmd")
 
 endif
 
+" mmmh dont like it
+" Disable Arrow keys in Normal mode
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+"
+" " Disable Arrow keys in Insert mode
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
+" 

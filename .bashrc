@@ -51,6 +51,9 @@ export ENVM_AUTO_UPDATE_DAYS=30
 source "$ENVM/envm"
 # ----------
 
+# Owncloud sync dir
+export OWNCLOUD_DIR="$HOME/owncloud"
+
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
