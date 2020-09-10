@@ -26,8 +26,9 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+map <C-c> :SyntasticCheck
 let g:syntastic_aggregate_errors=1
 let g:syntastic_sort_aggregate_errors=1
 let g:syntastic_id_checkers = 1
@@ -38,6 +39,7 @@ let g:syntastic_error_symbol = "X"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_mode="active"
 let g:syntastic_mode_map = { "mode": "active", "active_filetypes": ["php", "js"], "passive_filetypes": [] }
+
 
 " Php Stuff
 let g:syntastic_php_checkers=1
@@ -56,8 +58,6 @@ let g:pdv_cfg_annoation_Author = 0
 let g:pdv_cfg_annoation_Copyright = 0
 let g:pdv_cfg_annoation_License = 0
 
-
-
 " JS stuff
 let g:syntastic_javascript_checkers=1
 unlet g:syntastic_javascript_checkers
@@ -65,7 +65,6 @@ let g:syntastic_javascript_checkers=["eslint"]
 
 " vue
 let g:vue_pre_processors = ["scss"]
-
 
 " Python stuff
 let g:syntastic_python_python_exec = 'python3'
@@ -106,13 +105,9 @@ set encoding=utf-8
 set viminfo='20,<1000,s1000
 
 colorscheme fahrenheit
-" colorscheme codedark
-" colorscheme unicon
-" colorscheme spacecamp
 syntax enable
 
 if has("autocmd")
-
 	augroup Skels
 		au BufNewFile *.*sh 0r $HOME/.vim/skels/skel
 		au BufNewFile *.py 0r $HOME/.vim/skels/skel.py
@@ -134,15 +129,6 @@ if has("autocmd")
 	augroup END
 	noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
-
-	augroup Makes
-		au FileType tex set makeprg=pdflatex\ %
-		au FileType js set makeprg=node\ %
-		au FileType python set makeprg=python3\ %
-		au FileType cpp set makeprg=g++\ %
-		au FileType c set makeprg=gcc\ %
-	augroup END
-
 endif
 
 " mmmh dont like it

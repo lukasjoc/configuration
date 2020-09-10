@@ -64,4 +64,4 @@ source "$HOME/.private"
 [[ -f ~/.Xresources ]]; xrdb -merge ~/.Xresources
 
 # start tmux session if not nested already
-tmux new-session -A -s kaizen
+# tmux new-session -A -s kaizen
