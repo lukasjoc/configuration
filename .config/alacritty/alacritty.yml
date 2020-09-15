@@ -28,7 +28,7 @@ font:
   bold_italic:
     family: Droid Sans Mono
     style: Bold Italic
-  size: 13.3
+  size: 13.33333333333333
 
 offset:
   x: 0

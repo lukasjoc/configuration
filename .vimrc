@@ -15,7 +15,8 @@ Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
 
 " Color Scheme and Appearance
-Plug 'fcpg/vim-fahrenheit'
+" Plug 'fcpg/vim-fahrenheit'
+Plug 'lukasjoc/vim-fahrenheit'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
