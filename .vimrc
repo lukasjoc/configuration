@@ -15,7 +15,6 @@ Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
 
 " Color Scheme and Appearance
-" Plug 'fcpg/vim-fahrenheit'
 Plug 'lukasjoc/vim-fahrenheit'
 Plug 'itchyny/lightline.vim'
 
@@ -40,7 +39,6 @@ let g:syntastic_error_symbol = "X"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_mode="active"
 let g:syntastic_mode_map = { "mode": "active", "active_filetypes": ["php", "js"], "passive_filetypes": [] }
-
 
 " Php Stuff
 let g:syntastic_php_checkers=1
@@ -132,16 +130,3 @@ if has("autocmd")
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
 endif
 
-" mmmh dont like it
-" Disable Arrow keys in Normal mode
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-"
-" " Disable Arrow keys in Insert mode
-" imap <up> <nop>
-" imap <down> <nop>
-" imap <left> <nop>
-" imap <right> <nop>
-" 
