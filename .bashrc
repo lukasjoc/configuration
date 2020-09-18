@@ -45,14 +45,13 @@ export PATH=$GOBIN:$PATH
 export TEXMFHOME="$HOME/Library/texmf"
 
 # EnvM stuff
-export ENVM="$HOME/.envm"
+export ENVM_HOME="$HOME/.envm"
 export ENVM_WDIR="$HOME/fun"
-export ENVM_AUTO_UPDATE_DAYS=30
 source "$ENVM/envm"
 # ----------
 
 # Owncloud sync dir
-export OWNCLOUD_DIR="$HOME/owncloud"
+export OWNCLOUD_HOME="$HOME/owncloud"
 
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
