@@ -1,0 +1,13 @@
+# This belongs to /etc/hosts
+# Blocking some websites
+0.0.0.0 www.facebook.com
+0.0.0.0 facebook.com
+# 0.0.0.0 www.twitter.com
+# 0.0.0.0 twitter.com
+# 0.0.0.0 mobile.twitter.com
+0.0.0.0 instagram.com
+0.0.0.0 www.instagram.com
+0.0.0.0 xing.com
+0.0.0.0 linkedin.com
+0.0.0.0 www.linkedin.com
+#0.0.0.0 twitch.tv

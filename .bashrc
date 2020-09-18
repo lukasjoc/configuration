@@ -47,7 +47,7 @@ export TEXMFHOME="$HOME/Library/texmf"
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
 export ENVM_WDIR="$HOME/fun"
-source "$ENVM/envm"
+source "$ENVM_HOME/envm"
 # ----------
 
 # Owncloud sync dir
