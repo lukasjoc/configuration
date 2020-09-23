@@ -1,14 +1,11 @@
 #!/bin/bash
-# Desc: bash shell config executed for non-login shells.
-# Author: lukasjoc <jochamlu@gmail.com>
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
+  *i*) ;;
 	*) return;;
 esac
 
-# dont put duplicate lines in history, lines that start with a space
 export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
 export HISTFILESIZE=2000
@@ -36,7 +33,7 @@ export RUSTBIN="$HOME/.cargo/bin"
 export PATH=$RUST_SRC_PATH/bin:$PATH
 
 # Go
-export GOPATH="$HOME/.go"
+export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GO111MODULE=on
 export PATH=$GOBIN:$PATH
@@ -46,12 +43,10 @@ export TEXMFHOME="$HOME/Library/texmf"
 
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
-export ENVM_WDIR="$HOME/fun"
 source "$ENVM_HOME/envm"
-# ----------
 
-# Owncloud sync dir
-export OWNCLOUD_HOME="$HOME/owncloud"
+# .local/bin
+export PATH=$HOME/.local/bin:$PATH
 
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
@@ -59,8 +54,3 @@ bind -x '"\C-l": clear'
 # Source private variables
 source "$HOME/.private"
 
-# Reload Xresources
-[[ -f ~/.Xresources ]]; xrdb -merge ~/.Xresources
-
-# start tmux session if not nested already
-# tmux new-session -A -s kaizen

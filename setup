@@ -40,9 +40,11 @@ if [[ "$1" == "--complete" ]]; then
 	# Skelets
 	echo "Linking vim skelet files... "
 	[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
-	for skel in .vim/skels/skel*; do
-		ln -sf "$PWD/$skel" "$HOME/$skel"
-	done
+	for skel in .vim/skels/skel*; do ln -sf "$PWD/$skel" "$HOME/$skel"; done
+	for bin in .local/bin/*; do ln -sf "$PWD/$bin" "$HOME/$bin"; done
+
+
+
 
 	echo "Linking .configs..."
 	# Alacrity

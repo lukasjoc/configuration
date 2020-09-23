@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo "Setting up vim workflow..."
+
+if ! command -v vim >/dev/null 2>&1; then
+	echo "could not setup vim: missing vim"
+	exit 1
+fi
+
+# install vundle if needed
+if [ ! -d "~/.vim/bundle/Vundle.vim" ]; then
+	if ! command -v git >/dev/null 2>&1; then
+		echo "could not install vundle: missing git"
+		exit 1
+	fi
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
+# init skels
+# cp -r ./skels ~/.vim/skels/
+
+# init vimr
+# cp -r .vimrc ~/
+
+# install plugins
+vim -c PluginInstall
+
+echo "DONE! :HappyViming"
