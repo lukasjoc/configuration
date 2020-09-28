@@ -13,6 +13,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'posva/vim-vue'
 Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
+Plug 'ollykel/v-vim'
+Plug 'elixir-editors/vim-elixir'
 
 " Color Scheme and Appearance
 Plug 'lukasjoc/vim-fahrenheit'
