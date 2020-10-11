@@ -43,9 +43,6 @@ if [[ "$1" == "--complete" ]]; then
 	for skel in .vim/skels/skel*; do ln -sf "$PWD/$skel" "$HOME/$skel"; done
 	for bin in .local/bin/*; do ln -sf "$PWD/$bin" "$HOME/$bin"; done
 
-
-
-
 	echo "Linking .configs..."
 	# Alacrity
 	mkdir -p "$HOME/.config/alacritty"|| true
@@ -53,7 +50,7 @@ if [[ "$1" == "--complete" ]]; then
 	
 	# Neofetch
 	mkdir -p "$HOME/.config/neofetch" || true
-	ln -sf "$PWD/.config/neofetch/config.config" "$HOME/.config/neofetch/config.conf"
+	ln -sf "$PWD/.config/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
 
 	echo "DONE.. Open Vim and type  ESC + :PlugInstall"
 fi

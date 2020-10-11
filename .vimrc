@@ -15,6 +15,7 @@ Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'ollykel/v-vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'pangloss/vim-javascript'
 
 " Color Scheme and Appearance
 Plug 'lukasjoc/vim-fahrenheit'
@@ -63,6 +64,7 @@ let g:pdv_cfg_annoation_License = 0
 let g:syntastic_javascript_checkers=1
 unlet g:syntastic_javascript_checkers
 let g:syntastic_javascript_checkers=["eslint"]
+let g:javascript_plugin_jsdoc = 1
 
 " vue
 let g:vue_pre_processors = ["scss"]
@@ -106,6 +108,7 @@ set encoding=utf-8
 set viminfo='20,<1000,s1000
 
 colorscheme fahrenheit
+
 syntax enable
 
 if has("autocmd")

@@ -17,16 +17,16 @@ decorations: full
 
 font:
   normal:
-    family: Droid Sans Mono
+    family: Monaco
     style: Regular
   bold:
-    family: Droid Sans Mono
+    family: Monaco
     style: Bold
   italic:
-    family: Droid Sans Mono
+    family: Monaco
     style: Italic
   bold_italic:
-    family: Droid Sans Mono
+    family: Monaco
     style: Bold Italic
   size: 13.33333333333333
 
@@ -92,4 +92,4 @@ mouse:
 
 print_events: false
 ref_test: false
-
+alt_send_esc: false

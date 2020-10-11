@@ -9,10 +9,10 @@ fi
 # Langs
 echo "Installing Langs..."
 brew install python # :ok
-brew install r      # :r
-brew install nim   	# :)
-brew install go 	  # :))
-brew install rust  	# :)))
+# brew install r      # :r
+# brew install nim   	# :)
+# brew install go 	  # :))
+# brew install rust  	# :)))
 brew install node 	# :(
 
 # Development Tools
@@ -25,17 +25,17 @@ brew install tree
 brew install watch
 brew install curl
 brew install wget
-brew install nmap
+# brew install nmap
 #===
 
 # Other helpful stuff
 echo "Installing other helpful stuff..."
-brew install exercism # 👑
+# brew install exercism # 👑
 brew install figlet
 brew install fortune
 brew install htop
 brew install iproute2mac
-brew install colordiff
+# brew install colordiff
 #===
 
 # Install Casks
@@ -44,12 +44,13 @@ brew cask install alfred
 brew cask install authy
 brew cask install cleanmymac
 brew cask install docker
-brew cask install qbittorrent
+# brew cask install qbittorrent
 brew cask install spectacle
 brew cask install firefox
-brew cask install virtualbox
+# brew cask install virtualbox
 brew cask install xquartz
 brew cask install macvim
+brew cask install alacritty
 #===
 
 

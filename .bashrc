@@ -28,9 +28,10 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 	
 # Rust
-export RUST_SRC_PATH="$HOME/.cargo"
-export RUSTBIN="$HOME/.cargo/bin"
-export PATH=$RUST_SRC_PATH/bin:$PATH
+# export RUST_SRC_PATH="$HOME/.cargo"
+# export RUSTBIN="$HOME/.cargo/bin"
+# export PATH=$RUST_SRC_PATH/bin:$PATH
+#
 
 # Go
 export GOPATH="$HOME/go"
@@ -39,7 +40,7 @@ export GO111MODULE=on
 export PATH=$GOBIN:$PATH
 
 # LaTeX
-export TEXMFHOME="$HOME/Library/texmf"
+# export TEXMFHOME="$HOME/Library/texmf"
 
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
@@ -51,6 +52,13 @@ export PATH=$HOME/.local/bin:$PATH
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
-# Source private variables
+# load bash completions
+[[ -f /usr/local/etc/bash_completion.d ]] && source "/usr/local/etc/bash_completion.d"
+
+# Source private variables and functions
 source "$HOME/.private"
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
