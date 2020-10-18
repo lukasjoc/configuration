@@ -9,3 +9,5 @@
 *~
 .DS_Store
 tags
+composer.json
+package*.json
