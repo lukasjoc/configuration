@@ -1,0 +1,29 @@
+# My Theme
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#FFFFFF'
+
+    cursor:
+      text:   '#FFFFFF'
+      cursor: '#FFD787'
+
+      normal:
+        black:   '#FFFFFF'
+        white:   '#FFFFFF'
+        red:     '#875F5F'
+        green:   '#6B62CF'
+        blue:    '#C3A571'
+        yellow:  '#B76AD2'
+        magenta: '#5F87AF'
+        cyan:    '#5F87AF'
+
+        bright:
+          black:   '#FFFFFF'
+          white:   '#FFFFFF'
+          red:     '#875f5F'
+          green:   '#5f87AF'
+          blue:    '#D7875F'
+          yellow:  '#FFD75F'
+          magenta: '#5F87A3'
+          cyan:    '#FFAF5F'

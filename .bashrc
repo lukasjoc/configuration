@@ -2,7 +2,7 @@
 
 # If not running interactively, don't do anything
 case $- in
-  *i*) ;;
+	*i*);;
 	*) return;;
 esac
 
@@ -17,21 +17,21 @@ shopt -s checkwinsize
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_BIN=$HOME/.local/bin
+export PATH=$XDG_DATA_BIN:$PATH
 
 export EDITOR="vim"
 export TERM="screen-256color"
 export CLICOLOR=1
+export CURRENT_PYTHON="python3.8"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-	
+
 # Rust
-# export RUST_SRC_PATH="$HOME/.cargo"
-# export RUSTBIN="$HOME/.cargo/bin"
-# export PATH=$RUST_SRC_PATH/bin:$PATH
-#
+export RUST_SRC_PATH="$HOME/.cargo"
+export RUSTBIN="$HOME/.cargo/bin"
+export PATH=$RUST_SRC_PATH/bin:$PATH
 
 # Go
 export GOPATH="$HOME/go"
@@ -40,25 +40,34 @@ export GO111MODULE=on
 export PATH=$GOBIN:$PATH
 
 # LaTeX
-# export TEXMFHOME="$HOME/Library/texmf"
+export TEXMFHOME="$HOME/Library/texmf"
+
+# Php
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
 source "$ENVM_HOME/envm"
 
-# .local/bin
-export PATH=$HOME/.local/bin:$PATH
-
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
-# load bash completions
-[[ -f /usr/local/etc/bash_completion.d ]] && source "/usr/local/etc/bash_completion.d"
+# homebrew no auto update
+if command -v brew &> /dev/null; then
+	export HOMEBREW_NO_AUTO_UPDATE=1
+fi
 
-# Source private variables and functions
-source "$HOME/.private"
+# NVM :( like it's ok
+if command -v nvm &> /dev/null; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "/usr/local/opt/nvm/nvm.sh" ]; source "/usr/local/opt/nvm/nvm.sh"
+	[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# Privacy at first place right after fun :PepoDance
+[[ -f "$HOME/.private" ]]; source "$HOME/.private"
+
+# Bash at last I dont like this
+# [[ -f /usr/local/share/bash-completion/bash_completion ]]; source "/usr/local/share/bash-completion/bash_completion"
+
+

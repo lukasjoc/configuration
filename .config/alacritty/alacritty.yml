@@ -49,38 +49,36 @@ bell:
 colors:
   primary:
     background: '#000000'
-    foreground: '#FFFFFF'
+    foreground: '#00ff00'
 
-  cursor:
-    text:   '#FFFFFF'
-    cursor: '#FFD787'
-
+  # Normal colors
   normal:
-    black:   '#FFFFFF'
-    white:   '#FFFFFF'
-    red:     '#875F5F'
-    green:   '#6B62CF'
-    blue:    '#C3A571'
-    yellow:  '#B76AD2'
-    magenta: '#5F87AF'
-    cyan:    '#5F87AF'
+    black: '#2e3436'
+    red: '#cc0000'
+    green: '#73d216'
+    yellow: '#edd400'
+    blue: '#3465a4'
+    magenta: '#75507b'
+    cyan: '#06989a'
+    white: '#d3d7cf'
 
+  # Bright colors
   bright:
-    black:   '#FFFFFF'
-    white:   '#FFFFFF'
-    red:     '#875f5F'
-    green:   '#5f87AF'
-    blue:    '#D7875F'
-    yellow:  '#FFD75F'
-    magenta: '#5F87A3'
-    cyan:    '#FFAF5F'
+    black: '#2e3436'
+    red: '#ef2929'
+    green: '#8ae234'
+    yellow: '#fce94f'
+    blue: '#729fcf'
+    magenta: '#ad7fa8'
+    cyan: '#34e2e2'
+    white: '#eeeeec'
 
 unfocused_hollow: true
 cursor:
   style: Block
 
 selection:
-  semantic_escape_chars: ",│`|:\"'()[]{}<>\t\n\xA0"
+  semantic_escape_chars: ",│`|:\"'()[]{}<>\t\n "
   dynamic_title: true
 
 mouse:
