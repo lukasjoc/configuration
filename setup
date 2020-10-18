@@ -57,6 +57,10 @@ mkdir -p "$HOME/.config/vifm/colors/"|| true
 cp -a "$PWD/.config/vifm/colors/" "$HOME/.config/vifm/colors/"
 ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
 
+# BitBar
+mkdir -p "$HOME/.config/bitbar"|| true
+ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
+
 # Tools vimrc is using
 if command -v npm &> /dev/null; then
 	if ! command -v eslint &> /dev/null; then npm install -g eslint; fi

@@ -92,10 +92,10 @@ map <C-d> :Autoformat
 set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
 
-" tabs with indent of 2
+" use spaces with 4 indent on this system
 filetype plugin indent on
-set autoindent noexpandtab
-set tabstop=2 softtabstop=-1 shiftwidth=2
+set autoindent expandtab
+set tabstop=4 softtabstop=-1 shiftwidth=4
 
 set hidden
 set number
