@@ -28,7 +28,7 @@ font:
   bold_italic:
     family: Monaco
     style: Bold Italic
-  size: 13.33333333333333
+  size: 12.13
 
 offset:
   x: 0
@@ -91,3 +91,4 @@ mouse:
 print_events: false
 ref_test: false
 alt_send_esc: false
+

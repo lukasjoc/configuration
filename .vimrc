@@ -17,9 +17,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'lukasjoc/vim-colors'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
+Plug 'Yggdroot/indentLine'
 
 " misc
-Plug 'zadkuh/vim-cmus'
 Plug 'wakatime/vim-wakatime'
 Plug 'chiel92/vim-autoformat'
 
