@@ -1,2 +1,2 @@
-set guifont=Monaco:h12
+set guifont=IBM Plex Mono:h14
 set background=dark

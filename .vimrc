@@ -1,29 +1,36 @@
-" Vim Configuration
+" Vim ConfigurationG
 
 call plug#begin('$HOME/.vim/plugged')
 
-" language extensions
+" Language Extensions
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'ollykel/v-vim'
 Plug 'elixir-editors/vim-elixir'
 
-" vue,js
+" js and vue
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 
-" colors, appearance
+" Colors, appearance
 Plug 'lukasjoc/vim-colors'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
 
-" misc
+" Time tracking
 Plug 'wakatime/vim-wakatime'
-Plug 'chiel92/vim-autoformat'
+
+" syntastic on steroids
+Plug 'dense-analysis/ale'
 
 call plug#end()
+
+" Ale
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+set omnifunc=ale#completion#OmniFunc
 
 " syntastic settings
 set statusline+=%#warningmsg#
@@ -83,7 +90,7 @@ if !has("gui_running")
 endif
 
 " wakatime settings
-let g:wakatime_PythonBinary = "/usr/local/bin/python3"
+let g:wakatime_PythonBinary = "/bin/python"
 
 " Autoformat
 " au BufWrite * :Autoformat " on save is a mess
@@ -106,6 +113,8 @@ set viminfo='20,<1000,s1000
 
 colorscheme base
 " colorscheme fahrenheit
+" colorscheme koehler
+
 syntax enable
 
 set linebreak
@@ -115,7 +124,6 @@ set noerrorbells visualbell
 set title
 set nofoldenable
 set confirm
-
 set nomodeline
 set shell=/usr/local/bin/bash
 
@@ -135,7 +143,7 @@ if has("autocmd")
 
 	augroup Commenting
 		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
-		au FileType sh,yml,yaml,bash,python,nim	let b:comment_leader = "# "
+		au FileType sh,yml,yaml,bash,python,nim let b:comment_leader = "# "
 		au FileType vim let b:comment_leader = '" '
 		au FileType tex let b:comment_leader = "% "
 		au FileType sql let b:comment_leader = "-- "
@@ -146,3 +154,14 @@ if has("autocmd")
 
 endif
 
+" Custom Commands and function
+
+" Plug Stuff Cleanage and update
+com! RunPlugStuff :PlugClean | PlugUpdate
+
+" " Swap it function and command
+" fun! SwapIt(from, to)
+" 	:%s/from/to/g
+" endfun
+" com! -nargs=* SwapIt call SwapIt(<f-args>)
+"

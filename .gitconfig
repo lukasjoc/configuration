@@ -1,51 +1,43 @@
-[user]
-	email=jochamlu@gmail.com
-	name=lukasjoc
-
 [core]
-	autocrlf=false
-	excludesfile=.gitignore
-	quotepath=false
-	editor=vim
+    autocrlf = false
+    excludesfile = .gitignore
+    quotepath = false
+    editor = vim
 
-# [apply]
-# 	whitespace=fix
-	
 [help]
-	autocorrect=1
+    autocorrect=1
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
 
 [alias]
-    br=branch
+    br = branch
     bra = branch -a
-	ch=checkout
-    st=status -s
-    diff=!"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-    last=log --pretty=oneline -n 20 --graph --abbrev-commit
-    lg=log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
-    new="!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-    contributors = shortlog --summary --numbered
-    alias=!git config -l | grep ^alias | cut -c 7- | sort
+    ch = checkout
+    st = status -s
+    diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    last = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
+    create = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    contrib = shortlog --summary --numbered
+    al = !git config -l | grep ^alias | cut -c 7- | sort
 
 [filter "lfs"]
-	clean=git-lfs clean -- %f
-	smudge=git-lfs smudge -- %f
-	process=git-lfs filter-process
-	required=true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
-[diff]
-	renames=copies
-
+# Dont rebase after origin pull
 [pull]
-	rebase=true
+	rebase = false
 
-[merge]
-	log=true
-
+# USER AND EMAIL
+[user]
+    name = Lukas Jocham
+    email = lukas.jocham@boerse-go.de

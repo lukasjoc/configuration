@@ -51,7 +51,7 @@ ln -sf "$PWD/.config/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
 mkdir -p "$HOME/.config/nvim"|| true
 ln -sf "$PWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 
-#Vifm
+# Vifm
 mkdir -p "$HOME/.config/vifm"|| true
 mkdir -p "$HOME/.config/vifm/colors/"|| true
 cp -a "$PWD/.config/vifm/colors/" "$HOME/.config/vifm/colors/"
@@ -60,6 +60,7 @@ ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
 # BitBar
 mkdir -p "$HOME/.config/bitbar"|| true
 ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
+# ===
 
 # Tools vimrc is using
 if command -v npm &> /dev/null; then
@@ -67,6 +68,12 @@ if command -v npm &> /dev/null; then
 	if ! command -v prettier &> /dev/null; then npm install -g prettier; fi
 fi
 if command -v composer &> /dev/null; then composer global require friendsofphp/php-cs-fixer; fi
+# ===
+
+# GIT setup names # FUCK CHECKING FOR VARIABLES YOLO
+git config --global user.name "$GIT_USER"
+git config --global user.email "$GIT_EMAIL"
+# ===
 
 echo "DONE.. Open Vim and type  ESC + :PlugInstall"
 

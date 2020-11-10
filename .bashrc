@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # If not running interactively, don't do anything
-case $- in
-	*i*);;
-	*) return;;
+case "$-" in
+    *i*);;
+    *) return;;
 esac
 
 export HISTCONTROL=ignoreboth
@@ -47,27 +47,21 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
-source "$ENVM_HOME/envm"
+[[ -d "$HOME/.envm" && -z $ENVM_HOME ]]; source "$ENVM_HOME/envm"
 
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
 # homebrew no auto update
 if command -v brew &> /dev/null; then
-	export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 # NVM :( like it's ok
-if command -v nvm &> /dev/null; then
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "/usr/local/opt/nvm/nvm.sh" ]; source "/usr/local/opt/nvm/nvm.sh"
-	[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-fi
+[[ -s "/usr/local/opt/nvm/nvm.sh" ]]; source "/usr/local/opt/nvm/nvm.sh"
+[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+export NVM_DIR="$HOME/.config/nvm"
 
 # Privacy at first place right after fun :PepoDance
 [[ -f "$HOME/.private" ]]; source "$HOME/.private"
-
-# Bash at last I dont like this
-# [[ -f /usr/local/share/bash-completion/bash_completion ]]; source "/usr/local/share/bash-completion/bash_completion"
-
 

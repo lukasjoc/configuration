@@ -17,18 +17,18 @@ decorations: full
 
 font:
   normal:
-    family: Monaco
-    style: Regular
+    family: IBM Plex Mono
+    style: Light
   bold:
-    family: Monaco
-    style: Bold
+    family: IBM Plex Mono
+    style: Medium
   italic:
-    family: Monaco
-    style: Italic
+    family: IBM Plex Mono
+    style: Light Italic
   bold_italic:
-    family: Monaco
-    style: Bold Italic
-  size: 12.13
+    family: IBM Plex Mono
+    style: SemiBold Italic
+  size: 13.4
 
 offset:
   x: 0
@@ -46,32 +46,38 @@ bell:
   duration: 0
   color: '#FFFFFF'
 
+
+
+# Colors (Terminal.app)
 colors:
+  # Default colors
   primary:
-    background: '#000000'
-    foreground: '#00ff00'
+    background: '0x1e1e1e'
+    foreground: '0xb6b6b6'
 
   # Normal colors
   normal:
-    black: '#2e3436'
-    red: '#cc0000'
-    green: '#73d216'
-    yellow: '#edd400'
-    blue: '#3465a4'
-    magenta: '#75507b'
-    cyan: '#06989a'
-    white: '#d3d7cf'
+    black:   '0x000000'
+    red:     '0x990000'
+    green:   '0x00a600'
+    yellow:  '0x999900'
+    blue:    '0x2e56f4'
+    magenta: '0xb200b2'
+    cyan:    '0x00a6b2'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-    black: '#2e3436'
-    red: '#ef2929'
-    green: '#8ae234'
-    yellow: '#fce94f'
-    blue: '#729fcf'
-    magenta: '#ad7fa8'
-    cyan: '#34e2e2'
-    white: '#eeeeec'
+    black:   '0x666666'
+    red:     '0xe50000'
+    green:   '0x00d900'
+    yellow:  '0xe5e500'
+    blue:    '0x0000ff'
+    magenta: '0xe500e5'
+    cyan:    '0x00e5e5'
+    white:   '0xe5e5e5'
+
+
 
 unfocused_hollow: true
 cursor:
@@ -82,8 +88,8 @@ selection:
   dynamic_title: true
 
 mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  double_click: { threshold: 275  }
+  triple_click: { threshold: 275 }
   hide_when_typing: true
   url:
     program: Chromium.app
@@ -91,4 +97,3 @@ mouse:
 print_events: false
 ref_test: false
 alt_send_esc: false
-
