@@ -27,18 +27,20 @@ Plug 'dense-analysis/ale'
 call plug#end()
 
 " Ale
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-set omnifunc=ale#completion#OmniFunc
+"let g:ale_fix_on_save = 1
+"let g:ale_completion_enabled = 122
+"let g:ale_completion_autoimport = 1
+"let g:ale_completion_autoimport = 1
+"let g:ale_fixers.javascript = ['eslint']
+"set omnifunc=ale#completion#OmniFunc
 
 " syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 map <C-c> :SyntasticCheck
 let g:syntastic_aggregate_errors=1
@@ -111,8 +113,8 @@ set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
-colorscheme base
-" colorscheme fahrenheit
+" colorscheme base
+colorscheme fahrenheit
 " colorscheme koehler
 
 syntax enable

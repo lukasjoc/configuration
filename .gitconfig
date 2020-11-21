@@ -16,14 +16,13 @@
     pager = true
 
 [alias]
-    br = branch
+    br = branch -vv
     bra = branch -a
     ch = checkout
-    st = status -s
+    st = status
     diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     last = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
-    create = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
     contrib = shortlog --summary --numbered
     al = !git config -l | grep ^alias | cut -c 7- | sort
 
