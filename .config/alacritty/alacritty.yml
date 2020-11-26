@@ -46,38 +46,34 @@ bell:
   duration: 0
   color: '#FFFFFF'
 
-
-
 # Colors (Terminal.app)
 colors:
-  # Default colors
+  name: Atelierdune (dark)
+  author: Chris Kempson
   primary:
-    background: '0x1e1e1e'
-    foreground: '0xb6b6b6'
-
-  # Normal colors
+    background: "#20201d"
+    foreground: "#a6a28c"
+  cursor:
+    text: "#20201d"
+    cursor: "#a6a28c"
   normal:
-    black:   '0x000000'
-    red:     '0x990000'
-    green:   '0x00a600'
-    yellow:  '0x999900'
-    blue:    '0x2e56f4'
-    magenta: '0xb200b2'
-    cyan:    '0x00a6b2'
-    white:   '0xbfbfbf'
-
-  # Bright colors
+    black: "#20201d"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#a6a28c"
   bright:
-    black:   '0x666666'
-    red:     '0xe50000'
-    green:   '0x00d900'
-    yellow:  '0xe5e500'
-    blue:    '0x0000ff'
-    magenta: '0xe500e5'
-    cyan:    '0x00e5e5'
-    white:   '0xe5e5e5'
-
-
+    black: "#7d7a68"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#fefbec"
 
 unfocused_hollow: true
 cursor:
@@ -88,7 +84,7 @@ selection:
   dynamic_title: true
 
 mouse:
-  double_click: { threshold: 275  }
+  double_click: { threshold: 275 }
   triple_click: { threshold: 275 }
   hide_when_typing: true
   url:

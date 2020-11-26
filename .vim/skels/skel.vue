@@ -3,8 +3,8 @@
 </template>
 
 <script>
-	module.exports = {
-		data: ()  => {
+	export default {
+		data() {
 			return {
 				test: "I am A Skeletion File"
 			}
