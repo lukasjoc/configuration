@@ -100,22 +100,17 @@
     gitAndTools.gh gitAndTools.gitFull colordiff
 
 	  #Langs
-	  go go-tools python3 nim rustc perl erlang elixir llvm
-    vlang
-
-	  #GUI
-	  firefox brave alacritty vscodium gnvim
+	  go go-tools python3 nim rustc
+    perl erlang elixir llvm vlang
 
 	  #Extras
+	  firefox brave alacritty vscodium gnvim
 	  lightdm ulauncher picom figlet neofetch
     qemu_kvm virt-manager docker
   ];
 
   # Default user settings
   users = {
-    # groups = {
-    #   docker.gid = 1000;
-    # };
     extraUsers.lukasjoc = {
       isNormalUser = true;
       home = "/home/lukasjoc";
