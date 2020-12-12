@@ -75,7 +75,7 @@ set backspace=indent,eol,start
 
 filetype plugin indent on
 set autoindent expandtab
-set tabstop=4 softtabstop=-1 shiftwidth=4
+set tabstop=2 softtabstop=-1 shiftwidth=2
 
 set hidden
 set number

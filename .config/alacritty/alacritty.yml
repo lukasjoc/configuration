@@ -28,7 +28,7 @@ font:
   bold_italic:
     family: IBM Plex Mono
     style: SemiBold Italic
-  size: 13.4
+  size: 11
 
 offset:
   x: 0
@@ -44,7 +44,7 @@ draw_bold_text_with_bright_colors: false
 bell:
   animation: EaseOutExpo
   duration: 0
-  color: '#FFFFFF'
+  color: '#ffffff'
 
 # Colors (Terminal.app)
 colors:
@@ -67,7 +67,7 @@ colors:
     white: "#8e8e8e"
   bright:
     black: "#494949"
-    red: "#b87e7e"
+    red:  "#b87e7e"
     green: "#839d84"
     yellow: "#919864"
     blue: "#73718f"
@@ -88,7 +88,7 @@ mouse:
   triple_click: { threshold: 275 }
   hide_when_typing: true
   url:
-    program: Chromium.app
+    program: Brave.app
 
 print_events: false
 ref_test: false

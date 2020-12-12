@@ -46,22 +46,22 @@ export TEXMFHOME="$HOME/Library/texmf"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # EnvM stuff
-export ENVM_HOME="$HOME/.envm"
-[[ -d "$HOME/.envm" && -z $ENVM_HOME ]]; source "$ENVM_HOME/envm"
+# export ENVM_HOME="$HOME/.envm"
+# [[ -d "$HOME/.envm" && -z $ENVM_HOME ]]; source "$ENVM_HOME/envm"
 
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
 # homebrew no auto update
-if command -v brew &> /dev/null; then
-    export HOMEBREW_NO_AUTO_UPDATE=1
-fi
+# if command -v brew &> /dev/null; then
+#     export HOMEBREW_NO_AUTO_UPDATE=1
+# fi
 
 # NVM :( like it's ok
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]]; source "/usr/local/opt/nvm/nvm.sh"
-[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-export NVM_DIR="$HOME/.config/nvm"
+# [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; source "/usr/local/opt/nvm/nvm.sh"
+# [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# export NVM_DIR="$HOME/.config/nvm"
 
 # Privacy at first place right after fun :PepoDance
-[[ -f "$HOME/.private" ]]; source "$HOME/.private"
+# [[ -f "$HOME/.private" ]]; source "$HOME/.private"
 
