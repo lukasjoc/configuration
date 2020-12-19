@@ -46,34 +46,33 @@ bell:
   duration: 0
   color: '#ffffff'
 
-# Colors (Terminal.app)
 colors:
-  name: Bitmute
+  name: Neon
   author: ""
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
+    background: "#171717"
+    foreground: "#f8f8f8"
   cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    text: "#171717"
+    cursor: "#f8f8f8"
   normal:
-    black: "#282828"
-    red: "#b76969"
-    green: "#719d72"
-    yellow: "#909858"
-    blue: "#68668f"
-    magenta: "#966894"
-    cyan: "#688891"
-    white: "#8e8e8e"
+    black: "#171717"
+    red: "#d81765"
+    green: "#97d01a"
+    yellow: "#ffa800"
+    blue: "#16b1fb"
+    magenta: "#ff2491"
+    cyan: "#0fdcb6"
+    white: "#ebebeb"
   bright:
-    black: "#494949"
-    red:  "#b87e7e"
-    green: "#839d84"
-    yellow: "#919864"
-    blue: "#73718f"
-    magenta: "#987397"
-    cyan: "#758c93"
-    white: "#aeaeae"
+    black: "#38252c"
+    red: "#ff0000"
+    green: "#76b639"
+    yellow: "#e1a126"
+    blue: "#289cd5"
+    magenta: "#ff2491"
+    cyan: "#0a9b81"
+    white: "#f8f8f8"
 
 unfocused_hollow: true
 cursor:

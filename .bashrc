@@ -49,6 +49,9 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 # export ENVM_HOME="$HOME/.envm"
 # [[ -d "$HOME/.envm" && -z $ENVM_HOME ]]; source "$ENVM_HOME/envm"
 
+# Privacy at first place right after fun :PepoDance
+[[ -f "$HOME/private" ]]; source "$HOME/private"
+
 # set C-l command to clear terminal
 bind -x '"\C-l": clear'
 
@@ -61,7 +64,4 @@ bind -x '"\C-l": clear'
 # [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; source "/usr/local/opt/nvm/nvm.sh"
 # [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]; source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 # export NVM_DIR="$HOME/.config/nvm"
-
-# Privacy at first place right after fun :PepoDance
-# [[ -f "$HOME/.private" ]]; source "$HOME/.private"
 

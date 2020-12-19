@@ -21,7 +21,6 @@ Plug 'wakatime/vim-wakatime'
 " Syntastic on steroids
 Plug 'dense-analysis/ale'
 
-
 call plug#end()
 
 let g:ale_lint_on_text_changed = 'never'
@@ -86,7 +85,9 @@ set viminfo='20,<1000,s1000
 
 
 " colorscheme base
+"
 colorscheme fahrenheit
+" colorscheme macvim
 " colorscheme koehler
 syntax enable
 
