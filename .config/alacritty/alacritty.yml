@@ -28,7 +28,7 @@ font:
   bold_italic:
     family: IBM Plex Mono
     style: SemiBold Italic
-  size: 11
+  size: 13
 
 offset:
   x: 0
@@ -47,32 +47,32 @@ bell:
   color: '#ffffff'
 
 colors:
-  name: Neon
-  author: ""
+  # Default colors
   primary:
-    background: "#171717"
-    foreground: "#f8f8f8"
-  cursor:
-    text: "#171717"
-    cursor: "#f8f8f8"
+    background: '#000000'
+    foreground: '#dddddd'
+
+  # Normal colors
   normal:
-    black: "#171717"
-    red: "#d81765"
-    green: "#97d01a"
-    yellow: "#ffa800"
-    blue: "#16b1fb"
-    magenta: "#ff2491"
-    cyan: "#0fdcb6"
-    white: "#ebebeb"
+    black:   '#000000'
+    red:     '#cc0403'
+    green:   '#19cb00'
+    yellow:  '#cecb00'
+    blue:    '#0d73cc'
+    magenta: '#cb1ed1'
+    cyan:    '#0dcdcd'
+    white:   '#dddddd'
+
+  # Bright colors
   bright:
-    black: "#38252c"
-    red: "#ff0000"
-    green: "#76b639"
-    yellow: "#e1a126"
-    blue: "#289cd5"
-    magenta: "#ff2491"
-    cyan: "#0a9b81"
-    white: "#f8f8f8"
+    black:   '#767676'
+    red:     '#f2201f'
+    green:   '#23fd00'
+    yellow:  '#fffd00'
+    blue:    '#1a8fff'
+    magenta: '#fd28ff'
+    cyan:    '#14ffff'
+    white:   '#ffffff'
 
 unfocused_hollow: true
 cursor:
@@ -80,7 +80,7 @@ cursor:
 
 selection:
   semantic_escape_chars: ",│`|:\"'()[]{}<>\t\n "
-  dynamic_title: true
+  dynamic_title: false
 
 mouse:
   double_click: { threshold: 275 }

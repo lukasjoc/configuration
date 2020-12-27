@@ -1,7 +1,11 @@
 " Vim ConfigurationG
 
-call plug#begin('$HOME/.vim/plugged')
+" If started from fish shell use bash for best compatibility
+if &shell =~# 'fish$'
+  set shell=bash
+endif
 
+call plug#begin('$HOME/.vim/plugged')
 " Language Extensions
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'zah/nim.vim'
@@ -10,17 +14,12 @@ Plug 'ollykel/v-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
+Plug 'lukasjoc/vim-fish'
 
-" Colors, appearance
+" Etc.
 Plug 'lukasjoc/vim-colors'
-Plug 'itchyny/lightline.vim'
-
-" Time tracking
 Plug 'wakatime/vim-wakatime'
-
-" Syntastic on steroids
 Plug 'dense-analysis/ale'
-
 call plug#end()
 
 let g:ale_lint_on_text_changed = 'never'
@@ -38,7 +37,6 @@ let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-let g:lightline#extensions#ale#enabled = 1
 
 " Php
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
@@ -57,38 +55,35 @@ let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {'vue': ['eslint', 'vls']}
 
 " Lightline settings
-set noshowmode
+" set noshowmode
 set laststatus=2
-let g:lightline = {"colorscheme": "PaperColor"}
 if !has("gui_running")
-	set t_Co=256
+  set t_Co=256
 endif
 
 " Wakatime settings
-let g:wakatime_PythonBinary = "/bin/python"
-
-
-"-------------
 set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
 
-filetype plugin indent on
-set autoindent expandtab
-set tabstop=2 softtabstop=-1 shiftwidth=2
+filetype indent on
+set autoindent
+set expandtab
+set shiftround
+set smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=-1
 
 set hidden
 set number
-set incsearch hlsearch smartcase
+set incsearch
+set hlsearch
+set smartcase
 set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
-
-" colorscheme base
-"
 colorscheme fahrenheit
-" colorscheme macvim
-" colorscheme koehler
 syntax enable
 
 set linebreak
@@ -98,7 +93,8 @@ set noerrorbells visualbell
 set title
 set nofoldenable
 set confirm
-set nomodeline
+set lazyredraw
+set complete-=i
 
 if has("autocmd")
 	augroup Skels
