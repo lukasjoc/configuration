@@ -83,7 +83,7 @@ set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
-colorscheme fahrenheit
+" colorscheme fahrenheit
 syntax enable
 
 set linebreak

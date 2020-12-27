@@ -17,7 +17,7 @@ set -g __fish_git_prompt_char_upstream_equal ''
 set -g __fish_git_prompt_char_upstream_ahead '^'
 set -g __fish_git_prompt_char_upstream_behind 'd'
 
-function fish_user_keybidnings; fish_vi_keybindings; end
+function fish_user_keybindings; fish_vi_keybindings; end
 function fish_mode_prompt; end
 function fish_prompt -d "Write out the prompt"
   printf '%s%s%s%s%s'\
