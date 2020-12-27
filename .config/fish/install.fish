@@ -5,8 +5,11 @@ if not test -e "$HOME/.config/fish/functions/fisher.fish"
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
 
+fish_update_completions
+
 fisher install \
   lukasjoc/fishforawhile \
   jorgebucaran/nvm.fish
 
 fisher list
+status
