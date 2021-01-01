@@ -1,5 +1,3 @@
-" Vim ConfigurationG
-
 " If started from fish shell use bash for best compatibility
 if &shell =~# 'fish$'
   set shell=bash
@@ -83,7 +81,9 @@ set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
-colorscheme fahrenheit
+" colorscheme fahrenheit
+" colorscheme wombat
+colorscheme orbital
 syntax enable
 
 set linebreak
