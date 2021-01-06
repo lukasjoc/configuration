@@ -67,3 +67,4 @@ if command -v brew &>/dev/null; then
   export HOMEBREW_NO_AUTO_UPDATE=1;
 fi
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
