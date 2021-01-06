@@ -5,17 +5,19 @@ endif
 
 call plug#begin('$HOME/.vim/plugged')
 " Language Extensions
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
 Plug 'zah/nim.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'ollykel/v-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
-Plug 'lukasjoc/vim-fish'
+Plug 'rust-lang/rust.vim'
+Plug 'lukasjoc/vim-fish' " my custo fish package
 
-" Etc.
-Plug 'lukasjoc/vim-colors'
+" Other shit
+Plug 'lukasjoc/vim-colors' " my custom colors package
+Plug 'lukasjoc/vim-skels' " my custom skel package
 Plug 'wakatime/vim-wakatime'
 Plug 'dense-analysis/ale'
 call plug#end()
@@ -31,8 +33,8 @@ let g:ale_set_quickfix = 1
 let g:ale_fixers = {
     \    "javascript": ["eslint", "prettier"],
 \}
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
+let g:ale_sign_error = 'e'
+let g:ale_sign_warning = '!'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -97,18 +99,6 @@ set lazyredraw
 set complete-=i
 
 if has("autocmd")
-	augroup Skels
-		au BufNewFile *.*sh 0r $HOME/.vim/skels/skel
-		au BufNewFile *.py 0r $HOME/.vim/skels/skel.py
-		au BufNewFile *.js,*.ts 0r $HOME/.vim/skels/skel.js
-		au BufNewFile *.c 0r $HOME/.vim/skels/skel.c
-		au BufNewFile *.cpp 0r $HOME/.vim/skels/skel.cpp
-		au BufNewFile *.html  0r $HOME/.vim/skels/skel.html
-		au BufNewFile *.vue setfiletype html
-		au BufNewFile *.vue 0r $HOME/.vim/skels/skel.vue
-		au BufNewFile *.php 0r $HOME/.vim/skels/skel.php
-	augroup END
-
 	augroup Commenting
 		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
 		au FileType sh,yml,yaml,bash,python,nim let b:comment_leader = "# "
