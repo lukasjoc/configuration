@@ -1,5 +1,19 @@
 # Alacritty Configuration
+alt_send_esc: false
 live_config_reload: true
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Debug
+  print_events: false
+  ref_test: false
+  print_events: false
+  ref_test: false
+
+shell:
+  program: /usr/bin/bash
+  args:
+    - --login
 
 window:
   dimensions:
@@ -18,17 +32,17 @@ decorations: full
 font:
   size: 10.9
 #   normal:
-#     # family: "UbuntuMono-R"
-#     # style: Light
+#     family: UbuntuMono-R
+#     style: Regular
 #   bold:
-#     # family: "UbuntuMono-B"
-#     # style: Light
+#     family: UbuntuMono-B
+#     style: Bold
 #   italic:
-#     # family: "UbunutMono-RI"
-#     # style: Italic
+#     family: UbunutMono-RI
+#     style: Italic
 #   bold_italic:
-#     # family: "UbuntuMono-BI"
-#     # style: Bold Italic
+#     family: UbuntuMono-BI
+#     style: Bold Italic
 
 
   # offset:
@@ -81,16 +95,24 @@ cursor:
 
 selection:
   semantic_escape_chars: ",│`|:\"'()[]{}<>\t\n "
-  dynamic_title: false
+  dynamic_title: true
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
 
 mouse:
   double_click: { threshold: 275 }
   triple_click: { threshold: 275 }
   hide_when_typing: true
   url:
-    program: /usr/bin/firefox
+    launcher:
+      program: firefox
+      modifiers: Control
 
-print_events: false
-ref_test: false
-alt_send_esc: false
+# Key Bindings:
+key_bindings:
+  - { key: Paste, action: Paste}
+  - { key: Copy, action: Copy}
+  - { key: L, mods: Control, action: ClearLogNotice}
+  - { key: L, mods: Control, chars: "\x0c"}
 
