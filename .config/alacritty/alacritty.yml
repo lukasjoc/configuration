@@ -1,6 +1,6 @@
 # Alacritty Configuration
-# alt_send_esc: false
-# live_config_reload: true
+alt_send_esc: false
+live_config_reload: true
 debug:
   render_timer: false
   persistent_logging: false

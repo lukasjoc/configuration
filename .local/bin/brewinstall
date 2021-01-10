@@ -6,29 +6,17 @@ if ! command -v "brew" >/dev/null 2>&1;  then
   echo "Happy brewing. :)"
 fi
 
-brews=[
-    python node nim go rust
-    git ack bash fish tmux tree 
-    watch curl wget nmap
-    figlet fortune htop iproute2mac
+brew install python node nim go rust \
+    git ack bash fish tmux tree \
+    watch curl wget nmap \
+    figlet fortune htop iproute2mac \
     colordiff
-]
 
-casks=[
-    alfred
-    authy
-    cleanmymac
-    docker
-    qbittorrent
-    spectacle
-    firefox
-    virtualbox
-    xquartz
-    macvim
-    alacritty
-]
-
-#  TODO: make list complete and loop over it and install
+brew install --cask alfred \
+    authy docker qbittorrent \
+    spectacle firefox \
+    virtualbox xquartz \
+    macvim alacritty
 
 brew doctor
 

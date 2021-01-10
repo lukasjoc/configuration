@@ -1,20 +1,17 @@
 #!/bin/bash
-set -e
+set -ue
 
-# declare -a dotfiles
-
-dotfiles=(
+declare dotfiles=(
 	".profile"
 	".bash_profile"
 	".bashrc"
 	".tmux.conf"
 	".inputrc"
 	".gitconfig"
-	".dir_colors"
 	".Xresources"
 )
 
-#Basic Config
+# Basic Config
 echo "Linking dotfiles..."
 for file in "${dotfiles[@]}"; do
 	ln -sf "$PWD/$file" "$HOME/$file"
@@ -24,7 +21,6 @@ echo "Linking vim files..."
 
 # Setup Vimrc
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-ln -sf "$PWD/.gvimrc" "$HOME/.gvimrc"
 
 echo "Pulling package manager and color scheme..."
 
@@ -32,15 +28,10 @@ echo "Pulling package manager and color scheme..."
 curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Skelets
-echo "Linking vim skelet files... "
-[[ -d $HOME/.vim/skels ]] || mkdir "$HOME/.vim/skels"
-for skel in .vim/skels/skel*; do ln -sf "$PWD/$skel" "$HOME/$skel"; done
-for bin in .local/bin/*; do ln -sf "$PWD/$bin" "$HOME/$bin"; done
-
 echo "Linking .configs..."
+
 # Alacrity
-mkdir -p "$HOME/.config/alacritty"|| true
+mkdir -p "$HOME/.config/alacritty" || true
 ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # Neofetch
@@ -48,32 +39,18 @@ mkdir -p "$HOME/.config/neofetch" || true
 ln -sf "$PWD/.config/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
 
 # Nvim
-mkdir -p "$HOME/.config/nvim"|| true
+mkdir -p "$HOME/.config/nvim" || true
 ln -sf "$PWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 
 # Vifm
-mkdir -p "$HOME/.config/vifm"|| true
-mkdir -p "$HOME/.config/vifm/colors/"|| true
+mkdir -p "$HOME/.config/vifm" || true
+mkdir -p "$HOME/.config/vifm/colors/" || true
 cp -a "$PWD/.config/vifm/colors/" "$HOME/.config/vifm/colors/"
 ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
 
 # BitBar
 mkdir -p "$HOME/.config/bitbar"|| true
 ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
-# ===
 
-# Tools vimrc is using
-if command -v npm &> /dev/null; then
-	if ! command -v eslint &> /dev/null; then npm install -g eslint; fi
-	if ! command -v prettier &> /dev/null; then npm install -g prettier; fi
-fi
-if command -v composer &> /dev/null; then composer global require friendsofphp/php-cs-fixer; fi
-# ===
-
-# GIT setup names # FUCK CHECKING FOR VARIABLES YOLO
-# git config --global user.name "$GIT_USER"
-# git config --global user.email "$GIT_EMAIL"
-# ===
-
-echo "DONE.. Open Vim and type  ESC + :PlugInstall"
+echo "DONE.. Open Vim and type  ESC + :PlugInstall and install all necessary tools for vim and so on (composer, eslint, ...)"
 

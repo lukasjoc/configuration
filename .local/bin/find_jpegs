@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir jpegs
+kdir jpegs
 
-for file in $(find . -iname '*.jpg'); do
-	cp $file jpegs
+for file in $(find . -iname "*.jpg"); do
+  cp "$file" jpegs
 done
 
