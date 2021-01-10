@@ -1,8 +1,8 @@
-" If started from fish shell use bash for best compatibility
-if &shell =~# 'fish$'
-  set shell=bash
-endif
+" Clearly overkill vim config
+" Author: lukasjoc
+" License: ISC as always
 
+set nocompatible
 call plug#begin('$HOME/.vim/plugged')
 " Language Extensions
 Plug 'fatih/vim-go'
@@ -13,30 +13,43 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
-Plug 'lukasjoc/vim-fish' " my custo fish package
+Plug 'lukasjoc/vim-fish'
 
-" Other shit
-Plug 'lukasjoc/vim-colors' " my custom colors package
-Plug 'lukasjoc/vim-skels' " my custom skel package
+" Other shit like linting, fixing, colors and
+" time tracking
+Plug 'lukasjoc/vim-colors'
+Plug 'lukasjoc/vim-skels'
 Plug 'wakatime/vim-wakatime'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
+" Ale General
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_fixers = {
-    \    "javascript": ["eslint", "prettier"],
-\}
-let g:ale_sign_error = 'e'
+let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '!'
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+" Fixing
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'vue': ['eslint'],
+\}
+
+" Linting
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0 " dont lint when opening a file device
+let g:ale_lint_on_save = 1
+
+" run linters on single filetype
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+
+" define lint on filetype
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'vue': ['eslint'],
+\}
 
 " Php
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
@@ -50,29 +63,15 @@ let g:pdv_cfg_annoation_Author = 0
 let g:pdv_cfg_annoation_Copyright = 0
 let g:pdv_cfg_annoation_License = 0
 
-" Vue
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'vue': ['eslint', 'vls']}
-
-" Lightline settings
-" set noshowmode
-set laststatus=2
-if !has("gui_running")
-  set t_Co=256
-endif
-
-" Wakatime settings
+filetype indent on
 set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
-
-filetype indent on
 set autoindent
 set expandtab
 set shiftround
 set smarttab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=-1
+set tabstop=2 shiftwidth=2 softtabstop=-1
+set ruler
 
 set hidden
 set number
@@ -84,9 +83,12 @@ set encoding=utf-8
 set viminfo='20,<1000,s1000
 
 " colorscheme fahrenheit
-" colorscheme wombat
 colorscheme orbital
 syntax enable
+if has('gui_running')
+  "tell the term has 256 colors
+  set t_Co=256
+end
 
 set linebreak
 set scrolloff=45 sidescrolloff=5
@@ -98,7 +100,7 @@ set confirm
 set lazyredraw
 set complete-=i
 
-if has("autocmd")
+if has('autocmd')
 	augroup Commenting
 		au FileType c,cpp,rust,javascript,java,scala,go,php let b:comment_leader = "// "
 		au FileType sh,yml,yaml,bash,python,nim let b:comment_leader = "# "
@@ -106,7 +108,6 @@ if has("autocmd")
 		au FileType tex let b:comment_leader = "% "
 		au FileType sql let b:comment_leader = "-- "
 	augroup END
-
 	noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,"\/")<CR>/<CR>:nohlsearch<CR>
 	noremap <silent> ,xx :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,"\/")<CR>//e<CR>:nohlsearch<CR>
 endif
@@ -114,4 +115,3 @@ endif
 " Custom Commands and function
 " Plug Stuff Cleanage and update
 com! RunPlugStuff :PlugClean | PlugUpdate
-

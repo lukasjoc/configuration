@@ -1,6 +1,6 @@
 # Alacritty Configuration
-alt_send_esc: false
-live_config_reload: true
+# alt_send_esc: false
+# live_config_reload: true
 debug:
   render_timer: false
   persistent_logging: false
@@ -11,7 +11,7 @@ debug:
   ref_test: false
 
 shell:
-  program: /usr/bin/bash
+  program: /bin/bash
   args:
     - --login
 
@@ -30,28 +30,15 @@ scrolling:
 decorations: full
 
 font:
-  size: 10.9
-#   normal:
-#     family: UbuntuMono-R
-#     style: Regular
-#   bold:
-#     family: UbuntuMono-B
-#     style: Bold
-#   italic:
-#     family: UbunutMono-RI
-#     style: Italic
-#   bold_italic:
-#     family: UbuntuMono-BI
-#     style: Bold Italic
+  size: 12.9
 
+offset:
+  x: 0
+  y: 0
 
-  # offset:
-  # x: 0
-  # y: 0
-
-  # glyph_offset:
-  # x: 0
-  # y: 0
+glyph_offset:
+  x: 0
+  y: 0
 
 use_thin_strokes: true
 draw_bold_text_with_bright_colors: false
@@ -94,11 +81,11 @@ cursor:
   style: Block
 
 selection:
-  semantic_escape_chars: ",│`|:\"'()[]{}<>\t\n "
+  semantic_escape_chars: ",`|:\"'()[]{}<>\t\n"
   dynamic_title: true
 
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+ - { mouse: Middle, action: PasteSelection }
 
 mouse:
   double_click: { threshold: 275 }
@@ -106,8 +93,7 @@ mouse:
   hide_when_typing: true
   url:
     launcher:
-      program: firefox
-      modifiers: Control
+      program: Chromium
 
 # Key Bindings:
 key_bindings:

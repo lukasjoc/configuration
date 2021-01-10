@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
- case "$-" in
-  *i*);;
-  *) return;;
-esac
-
 export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
 export HISTFILESIZE=2000
@@ -13,11 +7,6 @@ export CLICOLOR=1
 
 shopt -s histappend
 shopt -s checkwinsize
-
-# [[ ! -d "$HOME/.config" ]]; mkdir "$HOME/.config"
-# [[ ! -d "$HOME/.cache" ]]; mkdir "$HOME/.cache"
-# [[ ! -d "$HOME/.local/bin" ]]; mkdir -p "$HOME/.local/bin"
-# [[ ! -d "$HOME/.local/share" ]]; mkdir -p "$HOME/.local/share"
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -52,6 +41,9 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export ENVM_HOME="$HOME/.envm"
 source "$ENVM_HOME/envm"
 
+# LS_COLORS
+source "/Users/jochamlu/.local/share/lscolors.sh"
+
 # Nvm
 export NVM_DIR="$HOME/.config/nvm"
 [[ -f "$NVM_DIR/nvm.sh" ]]; source "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -68,3 +60,4 @@ if command -v brew &>/dev/null; then
 fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

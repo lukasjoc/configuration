@@ -38,6 +38,6 @@
 
 # USER AND EMAIL
 [user]
-	name = lukasjoc
-	email = jochamlu@gmail.com
+  name = $GIT_USER
+  email = $EMAIL
 
