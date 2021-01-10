@@ -42,7 +42,7 @@ export ENVM_HOME="$HOME/.envm"
 source "$ENVM_HOME/envm"
 
 # LS_COLORS
-source "/Users/jochamlu/.local/share/lscolors.sh"
+source "$HOME/.local/share/lscolors.sh"
 
 # Nvm
 export NVM_DIR="$HOME/.config/nvm"

@@ -10,11 +10,6 @@ debug:
   print_events: false
   ref_test: false
 
-shell:
-  program: /bin/bash
-  args:
-    - --login
-
 window:
   dimensions:
     columns: 150
