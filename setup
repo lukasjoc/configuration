@@ -2,7 +2,7 @@
 set -ue
 
 declare dotfiles=(
-	".profile"
+	# ".profile"
 	".bash_profile"
 	".bashrc"
 	".tmux.conf"
@@ -43,14 +43,14 @@ mkdir -p "$HOME/.config/nvim" || true
 ln -sf "$PWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 
 # Vifm
-mkdir -p "$HOME/.config/vifm" || true
-mkdir -p "$HOME/.config/vifm/colors/" || true
-cp -a "$PWD/.config/vifm/colors/" "$HOME/.config/vifm/colors/"
-ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
+# mkdir -p "$HOME/.config/vifm" || true
+# mkdir -p "$HOME/.config/vifm/colors/" || true
+# cp -a "$PWD/.config/vifm/colors/" "$HOME/.config/vifm/colors/"
+# ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
 
 # BitBar
-mkdir -p "$HOME/.config/bitbar"|| true
-ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
+#mkdir -p "$HOME/.config/bitbar"|| true
+#ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
 
 echo "DONE.. Open Vim and type  ESC + :PlugInstall and install all necessary tools for vim and so on (composer, eslint, ...)"
 
