@@ -1,22 +1,5 @@
 #!/bin/bash
 
-export HISTCONTROL=ignoreboth
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-export CLICOLOR=1
-
-shopt -s histappend
-shopt -s checkwinsize
-
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_DATA_BIN=$HOME/.local/bin
-export PATH=$XDG_DATA_BIN:$PATH
-
-export EDITOR="vim"
-export CLICOLOR=1
-
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
@@ -47,6 +30,7 @@ source "$HOME/.local/share/lscolors.sh"
 # Nvm
 export NVM_DIR="$HOME/.config/nvm"
 [[ -f "$NVM_DIR/nvm.sh" ]]; source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Privacy at first place right after fun :PepoDance
 [[ -f "$HOME/private" ]]; source "$HOME/private"
@@ -55,9 +39,7 @@ export NVM_DIR="$HOME/.config/nvm"
 bind -x '"\C-l": clear'
 
 # homebrew no auto update
-if command -v brew &>/dev/null; then
+if command -v brew 2&>/dev/null; then
   export HOMEBREW_NO_AUTO_UPDATE=1;
 fi
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

@@ -25,7 +25,18 @@ scrolling:
 decorations: full
 
 font:
-  size: 12.9
+  normal:
+    family: Monaco
+    style: Regular
+    options:
+      thin_strokes: true
+      antialias: lcd # Can have values like lcd, lcdv, gray, and none
+      hinting: true
+      style: Regular
+      offset:
+        x: 0
+        y: 0
+  size: 11
 
 offset:
   x: 0
@@ -47,14 +58,14 @@ bell:
 colors:
   # Default colors
   primary:
-    background: '#000000'
+    background: '#1e1e1e'
     foreground: '#ffffff'
   # Normal colors
   normal:
-    black:   '#000000'
+    black:   '#1e1e1e'
     red:     '#cd0000'
-    green:   '#00cd00'
-    yellow:  '#cdcd00'
+    green:   '#44c73d'
+    yellow:  '#b9b72d'
     blue:    '#569ee7'
     magenta: '#cd00cd'
     cyan:    '#00cdcd'
@@ -64,12 +75,17 @@ colors:
   bright:
     black:   '#7f7f7f'
     red:     '#ff0000'
-    green:   '#00ff00'
-    yellow:  '#ffff00'
+    green:   '#44c73d'
+    yellow:  '#b9b72d'
     blue:    '#569ee7'
     magenta: '#ff00ff'
     cyan:    '#00ffff'
     white:   '#ffffff'
+
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
 
 unfocused_hollow: true
 cursor:
@@ -86,9 +102,6 @@ mouse:
   double_click: { threshold: 275 }
   triple_click: { threshold: 275 }
   hide_when_typing: true
-  url:
-    launcher:
-      program: Chromium
 
 # Key Bindings:
 key_bindings:

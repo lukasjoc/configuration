@@ -33,8 +33,7 @@ let g:ale_sign_warning = '!'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
-\ 'vue': ['eslint'],
-\ 'php': ['phpcbf'],
+\ 'vue': ['eslint']
 \}
 
 " Linting
@@ -49,7 +48,6 @@ let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'vue': ['eslint'],
-\ 'php': ['php', 'phpcs'],
 \}
 
 " Php

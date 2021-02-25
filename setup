@@ -7,7 +7,6 @@ declare dotfiles=(
 	".bashrc"
 	".tmux.conf"
 	".inputrc"
-	".gitconfig"
 	".Xresources"
 )
 
