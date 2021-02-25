@@ -6,23 +6,18 @@ declare dotfiles=(
 	".bash_profile"
 	".bashrc"
 	".tmux.conf"
+	".vimrc"
 	".inputrc"
 	".Xresources"
 )
 
 # Basic Config
 echo "Linking dotfiles..."
-for file in "${dotfiles[@]}"; do
-	ln -sf "$PWD/$file" "$HOME/$file"
-done
+for file in "${dotfiles[@]}"; do ln -sf "$PWD/$file" "$HOME/$file"; done
 
 echo "Linking vim files..."
 
-# Setup Vimrc
-ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-
 echo "Pulling package manager and color scheme..."
-
 # vim-plug
 curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -30,11 +25,10 @@ curl -flo "$HOME/.vim/autoload/plug.vim" --create-dirs \
 echo "Linking .configs..."
 
 # Alacrity
-mkdir -p "$HOME/.config/alacritty" || true
+mkdir -p "$HOME/.config/alacritty" "$HOME/.config/neofetch" "$HOME/.config/nvim"
 ln -sf "$PWD/.config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # Neofetch
-mkdir -p "$HOME/.config/neofetch" || true
 ln -sf "$PWD/.config/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
 
 # Nvim
@@ -48,8 +42,8 @@ ln -sf "$PWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 # ln -sf "$PWD/.config/vifm/vifmrc" "$HOME/.config/vifm/vifmrc"
 
 # BitBar
-#mkdir -p "$HOME/.config/bitbar"|| true
-#ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
+mkdir -p "$HOME/.config/bitbar"|| true
+ln -sf "$PWD/.config/bitbar/getip" "$HOME/.config/bitbar/getip"
 
 echo "DONE.. Open Vim and type  ESC + :PlugInstall and install all necessary tools for vim and so on (composer, eslint, ...)"
 

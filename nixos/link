@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [[ "$1" == "--desktop" ]]; then
-  sudo cp desktop_config.nix /etc/nixos/configuration.nix;
-  ls -larthFG /etc/nixos/
-  nixos-rebuild boot
-  exit 1; # DONE
-fi
-

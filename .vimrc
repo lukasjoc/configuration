@@ -113,5 +113,5 @@ endif
 
 " Custom Commands and function
 " Plug Stuff Cleanage and update
-com! RunPlugStuff :PlugClean | PlugUpdate
+com! RunPlugStuff :PlugClean | PlugUpdate | PlugStatus
 
