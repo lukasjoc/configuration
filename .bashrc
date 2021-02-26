@@ -25,7 +25,8 @@ export ENVM_HOME="$HOME/.envm"
 source "$ENVM_HOME/envm"
 
 # LS_COLORS
-source "$HOME/.local/share/lscolors.sh"
+# TODO: update this to handle hidden files
+# source "$HOME/.local/share/lscolors.sh"
 
 # Nvm
 export NVM_DIR="$HOME/.config/nvm"
@@ -42,4 +43,6 @@ bind -x '"\C-l": clear'
 if command -v brew 2&>/dev/null; then
   export HOMEBREW_NO_AUTO_UPDATE=1;
 fi
+=======
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

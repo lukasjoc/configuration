@@ -22,7 +22,8 @@ makepkg -si
 cd -
 yay -S \
 	picom-git gnvim adobe-source-code-pro-fonts \
-	obmenu-generator visual-studio-code-bin ulauncher
+	obmenu-generator
+  # visual-studio-code-bin ulauncher
 
 echo "Creating mlocate indexdb"
 sudo updatedb
@@ -31,21 +32,17 @@ echo "Generating dynamic openbox menu with icons"
 obmenu-generator -p -i
 openbox --reconfigure
 
-echo "Installing virt-manager..."
-sudo pacman -S \
-	virt-manager qemu \
-	libvirt dmidecode ebtables dnsmasq
-sudo usermod -aG libvirt $USER
+# echo "Installing virt-manager..."
+# sudo pacman -S \
+# 	virt-manager qemu \
+# 	libvirt dmidecode ebtables dnsmasq
+# sudo usermod -aG libvirt $USER
 
 
 echo "Cleaning system..."
 sudo pacman -Scc
 sudo pacman -Rns $(sudo pacman -Qdtq)
 sudo rm -rf $HOME/.cache/*
-
-rmlint $HOME
-sudo $HOME/rmlint.sh -d
-sudo rm -rf $HOME/rmlint.json
 
 echo "Now you can start configuring your dev environment and import your dotfiles"
 

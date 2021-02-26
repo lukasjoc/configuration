@@ -36,7 +36,7 @@ font:
       offset:
         x: 0
         y: 0
-  size: 11
+  size: 10.0
 
 offset:
   x: 0
@@ -70,7 +70,7 @@ colors:
     magenta: '#cd00cd'
     cyan:    '#00cdcd'
     white:   '#e5e5e5'
-
+ 
   # Bright colors
   bright:
     black:   '#7f7f7f'

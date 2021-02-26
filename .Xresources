@@ -1,28 +1,45 @@
-!URxvt*foreground:  rgb:ff/af/5f
-!URxvt*background:  rgb:00/00/00
-!URxvt*cursorColor: rgb:d7/5f/00
-XTerm*foreground:  rgb:ff/af/5f
-XTerm*background:  rgb:00/00/00
+! Settings
+XTerm*foreground: white
+XTerm*background: black
 XTerm*cursorColor: rgb:d7/5f/00
-XTerm*faceName: UbuntuMono
-XTerm*faceSize: 11
+
+!XTerm*faceName: UbuntuMono Nerd Font Mono:style=Regular
+XTerm*faceName: Monaco
+XTerm*faceSize: 10
 XTerm*selectToClipboard: true
+Xterm.vt100.scrollBar: true
+Xterm.vt100.internalBorder: 4
+Xterm*highlightColor: darkGrey
+Xterm*highlightColorMode: true
+Xterm*highlightTextColor: darkBlue
+Xterm*highlightReverse: false
+
+!xterm*Background:               black
+!xterm*Foreground:               green
+!xterm*cursorColor:              LightBlue
+!xterm*pointerShape:             arrow
+!xterm*pointerColor:             blue
 
 ! Theme
-*color0:  rgb:00/00/00
-*color8:  rgb:26/26/26
-*color1:  rgb:d7/5f/00
-*color9:  rgb:d7/87/5f
-*color2:  rgb:af/87/5f
-*color10: rgb:d7/af/87
-*color3:  rgb:ff/d7/87
-*color11: rgb:ff/d7/5f
-*color4:  rgb:5f/87/af
-*color12: rgb:87/af/d7
-*color5:  rgb:87/5f/5f
-*color13: rgb:af/87/af
-*color6:  rgb:ff/d7/af
-*color14: rgb:ff/ff/d7
-*color7:  rgb:a8/a8/a8
-*color15: rgb:ff/ff/ff
+!*color0:  rgb:00/00/00
+!*color8:  rgb:26/26/26
+!*color1:  rgb:d7/5f/00
+!*color9:  rgb:d7/87/5f
+!*color2:  rgb:af/87/5f
+!*color10: rgb:d7/af/87
+!*color3:  rgb:ff/d7/87
+!*color11: rgb:ff/d7/5f
+!*color4:  rgb:5f/87/af
+!*color12: rgb:87/af/d7
+!*color5:  rgb:87/5f/5f
+!*color13: rgb:af/87/af
+!*color6:  rgb:ff/d7/af
+!*color14: rgb:ff/ff/d7
+!*color7:  rgb:a8/a8/a8
+!*color15: rgb:ff/ff/ff
+
+! Copy Pasta
+xterm*vt100.Translations: #override \
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
 

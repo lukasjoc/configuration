@@ -1,0 +1,41 @@
+[core]
+  autocrlf = false
+  excludesfile = .gitignore
+  quotepath = false
+  editor = vim
+
+[help]
+  autocorrect=1
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+[alias]
+  br = branch -vv
+  bra = branch -a
+  ch = checkout
+  st = status
+  diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  last = log --pretty=oneline -n 20 --graph --abbrev-commit
+  lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
+  contrib = shortlog --summary --numbered
+  env = !git config -l | sort
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+# Prefer mergeing
+[pull]
+  rebase = false
+
+[user]
+  name = lukasjoc
+  email = jochamlu@gmail.com
