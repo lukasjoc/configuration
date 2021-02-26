@@ -43,6 +43,6 @@ bind -x '"\C-l": clear'
 if command -v brew 2&>/dev/null; then
   export HOMEBREW_NO_AUTO_UPDATE=1;
 fi
-=======
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
