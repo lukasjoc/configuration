@@ -36,7 +36,7 @@ font:
       offset:
         x: 0
         y: 0
-  size: 10.0
+  size: 12.2
 
 offset:
   x: 0
@@ -81,7 +81,6 @@ colors:
     magenta: '#ff00ff'
     cyan:    '#00ffff'
     white:   '#ffffff'
-
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.

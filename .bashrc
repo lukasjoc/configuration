@@ -17,7 +17,7 @@ export PATH=$GOBIN:$PATH
 # LaTeX
 export TEXMFHOME="$HOME/Library/texmf"
 
-# Php
+# PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # EnvM stuff
@@ -26,12 +26,7 @@ source "$ENVM_HOME/envm"
 
 # LS_COLORS
 # TODO: update this to handle hidden files
-# source "$HOME/.local/share/lscolors.sh"
-
-# Nvm
-export NVM_DIR="$HOME/.config/nvm"
-[[ -f "$NVM_DIR/nvm.sh" ]]; source "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$HOME/.local/share/lscolors.sh"
 
 # Privacy at first place right after fun :PepoDance
 [[ -f "$HOME/private" ]]; source "$HOME/private"
@@ -44,5 +39,7 @@ if command -v brew 2&>/dev/null; then
   export HOMEBREW_NO_AUTO_UPDATE=1;
 fi
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
