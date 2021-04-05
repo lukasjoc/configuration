@@ -26,8 +26,8 @@ decorations: full
 
 font:
   normal:
-    family: Monaco
-    style: Regular
+    family: "DejaVu Sans Mono"
+    style: Light
     options:
       thin_strokes: true
       antialias: lcd # Can have values like lcd, lcdv, gray, and none
@@ -36,7 +36,7 @@ font:
       offset:
         x: 0
         y: 0
-  size: 12.2
+  size: 9.2
 
 offset:
   x: 0

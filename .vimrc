@@ -17,6 +17,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'lukasjoc/vim-fish'
 Plug 'vhda/verilog_systemverilog.vim'
 
+" trying just one chance ;)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Etc
 Plug 'lukasjoc/vim-colors'
 Plug 'lukasjoc/vim-skels'
@@ -42,6 +45,7 @@ let g:ale_fixers = {
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0 " dont lint when opening a file device
 let g:ale_lint_on_save = 1
+let g:ale_disable_lsp = 1
 
 " run linters on single filetype
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
