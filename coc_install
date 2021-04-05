@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "
-  CocInstall coc-json coc-tsserver coc-vetur coc-rls coc-yaml coc-nvim
+  CocInstall coc-json coc-tsserver coc-eslint coc-vetur coc-rls coc-yaml coc-nvim
 "
-
 

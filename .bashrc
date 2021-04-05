@@ -23,6 +23,7 @@ export PATH=$GOBIN:$PATH
 
 # EnvM stuff
 export ENVM_HOME="$HOME/.envm"
+export ENVM_ENABLE_PLUGINS=1
 source "$ENVM_HOME/envm"
 
 # LS_COLORS
