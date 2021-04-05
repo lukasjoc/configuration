@@ -1,42 +1,29 @@
 {
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
     "workbench.iconTheme": "vscode-icons",
-    "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
-    "editor.fontFamily": "Menlo",
-    "editor.mouseWheelZoom": true,
-    "editor.renderWhitespace": "all",
-    "editor.fontSize": 11,
-    "editor.tabSize": 4,
+    "workbench.colorTheme": "Default Dark+",
+    "editor.fontFamily": "Monaco",
+    "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
     "editor.detectIndentation": true,
-    "eslint.validate": [
-        "javascript",
-        "vue"
-    ],
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "all",
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
-    "extensions.ignoreRecommendations": true,
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
-    "eslint.lintTask.enable": true,
-    "eslint.runtime": "",
-    "eslint.run": "onSave",
-    // Vetur Settings
-    "vetur.format.options.tabSize": 4,
-    "vetur.ignoreProjectWarning": true,
-    "vetur.useWorkspaceDependencies": true,
-    "vetur.validation.template": false,
-    "vetur.experimental.templateInterpolationService": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "vsicons.dontShowNewVersionMessage": true,
+    "editor.fontSize": 11.5,
+    "editor.mouseWheelZoom": true,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
     "[vue]": {
         "editor.defaultFormatter": "octref.vetur"
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -47,4 +34,73 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "window.zoomLevel": 0,
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.hg": false,
+        "**/CVS": false
+    },
+    "breadcrumbs.enabled": false,
+    "explorer.compactFolders": false,
+    "extensions.ignoreRecommendations": true,
+
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.runtime": "",
+    "eslint.run": "onSave",
+    "eslint.debug": true,
+    "eslint.validate": [
+        "javascript",
+        "vue"
+    ],
+
+    "vetur.format.options.tabSize": 4,
+    "vetur.ignoreProjectWarning": true,
+    "vetur.useWorkspaceDependencies": true,
+    "vetur.validation.template": false,
+    "vetur.experimental.templateInterpolationService": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
 }
