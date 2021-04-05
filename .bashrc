@@ -3,6 +3,7 @@
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+
 # Rust
 export RUST_SRC_PATH="$HOME/.cargo"
 export RUSTBIN="$HOME/.cargo/bin"
@@ -26,7 +27,7 @@ source "$ENVM_HOME/envm"
 
 # LS_COLORS
 # TODO: update this to handle hidden files
-source "$HOME/.local/share/lscolors.sh"
+# source "$HOME/.local/share/lscolors.sh"
 
 # Privacy at first place right after fun :PepoDance
 [[ -f "$HOME/private" ]]; source "$HOME/private"

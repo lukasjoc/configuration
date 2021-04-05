@@ -109,7 +109,7 @@ if has('autocmd')
 
   " Commenting
   augroup comment
-    au FileType c,cpp,rust,javascript,java,pde,scala,go,php,v,sv let b:comment_leader = "// "
+    au FileType c,cpp,rust,javascript,java,pde,scala,go,php,v,sv,proto let b:comment_leader = "// "
     au FileType sh,yml,yaml,bash,python,pyx,nim let b:comment_leader = "# "
     au FileType vim let b:comment_leader = '" '
     au FileType tex let b:comment_leader = "% "
@@ -127,7 +127,6 @@ if has('autocmd')
     au BufRead,BufNewFile *.js,*.ts,*.vue set filetype=javascript
     au BufRead,BufNewFile *.pde set filetype=java
   augroup END
-
 endif
 
 " Plug Stuff Cleanage and update
