@@ -33,17 +33,17 @@ source "$ENVM_HOME/envm"
 # source "$HOME/.local/share/lscolors.sh"
 
 # Privacy at first place right after fun :PepoDance
-# [[ -f "$HOME/private" ]]; source "$HOME/private"
+[[ -f "$HOME/private" ]]; source "$HOME/private"
 
 # set C-l command to clear terminal
-# bind -x '"\C-l": clear'
+bind -x '"\C-l": clear'
 
 # homebrew no auto update
-# if command -v brew 2&>/dev/null; then
-#   export HOMEBREW_NO_AUTO_UPDATE=1;
-# fi
+if command -v brew 2&>/dev/null; then
+  export HOMEBREW_NO_AUTO_UPDATE=1;
+fi
 
 # Nvm
-# export NVM_DIR="$HOME/.config/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

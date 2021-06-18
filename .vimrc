@@ -8,17 +8,11 @@ call plug#begin('$HOME/.vim/plugged')
 " Langs
 Plug 'fatih/vim-go'
 Plug 'zah/nim.vim'
-Plug 'Rican7/php-doc-modded'
 Plug 'ollykel/v-vim'
-Plug 'elixir-editors/vim-elixir'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
-Plug 'lukasjoc/vim-fish'
 Plug 'vhda/verilog_systemverilog.vim'
-
-" trying just one chance ;)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Etc
 Plug 'lukasjoc/vim-colors'
@@ -69,7 +63,7 @@ let g:pdv_cfg_annoation_Copyright = 0
 let g:pdv_cfg_annoation_License = 0
 
 filetype indent on
-set list listchars=tab:\ \ ,trail:.,space:.
+set list listchars=tab:\ \ ,trail:.
 set backspace=indent,eol,start
 set autoindent
 set expandtab

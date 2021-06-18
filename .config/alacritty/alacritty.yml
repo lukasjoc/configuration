@@ -26,17 +26,16 @@ decorations: full
 
 font:
   normal:
-    family: "DejaVu Sans Mono"
-    style: Light
+    family: "Monaco"
     options:
       thin_strokes: true
       antialias: lcd # Can have values like lcd, lcdv, gray, and none
       hinting: true
-      style: Regular
+      style: Medium
       offset:
         x: 0
         y: 0
-  size: 9.2
+  size: 11.2
 
 offset:
   x: 0
