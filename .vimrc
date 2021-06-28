@@ -1,6 +1,4 @@
 " Clearly overkill vim config
-" Author: lukasjoc
-" License: ISC as always
 
 set nocompatible
 call plug#begin('$HOME/.vim/plugged')
@@ -8,10 +6,9 @@ call plug#begin('$HOME/.vim/plugged')
 " Langs
 Plug 'fatih/vim-go'
 Plug 'zah/nim.vim'
-Plug 'ollykel/v-vim'
-Plug 'posva/vim-vue'
-Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 Plug 'vhda/verilog_systemverilog.vim'
 
 " Etc
@@ -81,16 +78,17 @@ set pastetoggle=<C-t>
 set encoding=utf-8
 set viminfo='20,<1000,s1000
 
-colorscheme fahrenheit
+" colorscheme fahrenheit
 " colorscheme orbital
+colorscheme gruvbox
+
 syntax enable
 set colorcolumn=115
 highlight ColorColumn ctermbg=darkgrey
-
-
 if has('gui_running')
   "tell the term has 256 colors
   set t_Co=256
+  set background=dark
 end
 
 set linebreak
@@ -124,9 +122,20 @@ if has('autocmd')
     au BufRead,BufNewFile *.v,*.sv set filetype=verilog
     au BufRead,BufNewFile *.js,*.ts,*.vue set filetype=javascript
     au BufRead,BufNewFile *.pde set filetype=java
+    au BufRead,BufNewFile *.md set filetype=markdown
+    au BufRead,BufNewFile *.plist set filetype=xml
+    au BufRead,BufNewFile *.pm,*.pl,*.p6,*pm6 set filetype=perl
   augroup END
 endif
 
-" Plug Stuff Cleanage and update
+" Plug Stuff Cleanage and update./
 com! RunPlugStuff :PlugClean | PlugUpdate
 
+" StatusLine: File | WakaTime | LineCount | Position
+" set statusline=
+" set statusline+=\ %F
+" set statusline+=\ %{g:autoloads#waka_time_today}
+" set statusline+=%=
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=\

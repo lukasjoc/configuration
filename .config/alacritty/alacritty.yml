@@ -26,16 +26,16 @@ decorations: full
 
 font:
   normal:
-    family: "Monaco"
+    family: "Edlo"
     options:
       thin_strokes: true
       antialias: lcd # Can have values like lcd, lcdv, gray, and none
       hinting: true
-      style: Medium
+      style: Regular
       offset:
         x: 0
         y: 0
-  size: 11.2
+  size: 12.1
 
 offset:
   x: 0
@@ -53,32 +53,31 @@ bell:
   duration: 0
   color: '#ffffff'
 
-# XTerm's default colors
 colors:
-  # Default colors
   primary:
-    background: '#1e1e1e'
-    foreground: '#ffffff'
+    background: '#1d2021'
+    foreground: '#f2e5bc'
+
   # Normal colors
   normal:
-    black:   '#1e1e1e'
-    red:     '#cd0000'
-    green:   '#44c73d'
-    yellow:  '#b9b72d'
-    blue:    '#569ee7'
-    magenta: '#cd00cd'
-    cyan:    '#00cdcd'
+    black:   '#1d2021'
+    red:     '#9d0006'
+    green:   '#b8bb26'
+    yellow:  '#b57614'
+    blue:    '#83a598'
+    magenta: '#8f3f71'
+    cyan:    '#8ec07c'
     white:   '#e5e5e5'
- 
+
   # Bright colors
   bright:
-    black:   '#7f7f7f'
-    red:     '#ff0000'
-    green:   '#44c73d'
-    yellow:  '#b9b72d'
-    blue:    '#569ee7'
-    magenta: '#ff00ff'
-    cyan:    '#00ffff'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    # orange:  '#fe8019'
     white:   '#ffffff'
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
